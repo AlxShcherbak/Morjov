@@ -24,7 +24,7 @@
                         </Label>
                         <Button fx:id="doInputValue" layoutX="383.0" layoutY="109.0" mnemonicParsing="false" onAction="#doInputValue" prefHeight="25.0" prefWidth="100.0" text="ВВОД" />
                         <TextField fx:id="inputTextField" alignment="CENTER" layoutX="152.0" layoutY="109.0" onAction="#doInputValue" prefWidth="150.0" />
-                        <TextField fx:id="outputTextField" layoutX="177.0" layoutY="243.0" prefHeight="25.0" prefWidth="250.0" />
+                        <TextField fx:id="outputTextField" editable="false" layoutX="177.0" layoutY="243.0" prefHeight="25.0" prefWidth="250.0" />
                         <Label layoutX="227.0" layoutY="186.0" text="Результат">
                            <font>
                               <Font name="Times New Roman" size="35.0" />

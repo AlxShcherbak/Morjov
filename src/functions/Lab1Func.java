@@ -29,7 +29,7 @@ public class Lab1Func {
         }
         this.outputTextField = outputTextField;
         Double[] borders = borders(inputValue);
-        if (!borders[0].equals(null))
+        if (borders[0]!=(null))
             returnValue = doInterpolation(inputValue, borders);
         return returnValue;
     }
@@ -71,6 +71,7 @@ public class Lab1Func {
 
     /**
      * Инициализация входных массивов значений
+     * Вариант №19
      */
     private void setEnterArrayLists() {
         this.startParamOneArrayList.add((double) 0);

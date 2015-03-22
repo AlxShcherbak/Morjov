@@ -29,7 +29,7 @@ public class ControllerToFxml {
         outputTextField.clear();
         outputTextField.setAlignment(Pos.CENTER);
         if (!inputTextField.getText().isEmpty()) {
-            String inputValueString = new String(inputTextField.getText());
+            String inputValueString = inputTextField.getText();
             try {
                 double inputValueDouble = Double.parseDouble(inputValueString);
                 Double resultInterpolation = new Lab1Func().doInterpolationEnterValues(inputValueDouble, outputTextField);

@@ -22,8 +22,8 @@
                               <Font name="Times New Roman" size="35.0" />
                            </font>
                         </Label>
-                        <Button fx:id="doInputValue" layoutX="383.0" layoutY="109.0" mnemonicParsing="false" onAction="#doInputValue" prefHeight="25.0" prefWidth="100.0" text="ВВОД" />
                         <TextField fx:id="inputTextField" alignment="CENTER" layoutX="152.0" layoutY="109.0" onAction="#doInputValue" prefWidth="150.0" />
+                        <Button fx:id="doInputValue" layoutX="383.0" layoutY="109.0" mnemonicParsing="false" onAction="#doInputValue" prefHeight="25.0" prefWidth="100.0" text="ВВОД" />
                         <TextField fx:id="outputTextField" editable="false" layoutX="177.0" layoutY="243.0" prefHeight="25.0" prefWidth="250.0" />
                         <Label layoutX="227.0" layoutY="186.0" text="Результат">
                            <font>
@@ -34,7 +34,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab disable="true" text="LAB TWO">
+          <Tab text="Home Work">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -43,15 +43,6 @@
                               <Font name="Times New Roman" size="35.0" />
                            </font>
                         </Label>
-                        <Label layoutX="227.0" layoutY="240.0" text="Результат">
-                           <font>
-                              <Font name="Times New Roman" size="35.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="outputTextField1" editable="false" layoutX="175.0" layoutY="294.0" prefHeight="25.0" prefWidth="250.0" />
-                        <TextField fx:id="inputTextField1" alignment="CENTER" layoutX="283.0" layoutY="89.0" onAction="#doInputValue" prefWidth="150.0" />
-                        <Button fx:id="doInputValue1" layoutX="425.0" layoutY="186.0" mnemonicParsing="false" onAction="#doInputValue" prefHeight="25.0" prefWidth="100.0" text="ВВОД" />
-                        <TextField fx:id="inputTextField2" alignment="CENTER" layoutX="283.0" layoutY="135.0" onAction="#doInputValue" prefWidth="150.0" />
                         <Label layoutX="167.0" layoutY="90.0" text="1 параметр">
                            <font>
                               <Font name="Times New Roman" size="20.0" />
@@ -62,9 +53,23 @@
                               <Font name="Times New Roman" size="20.0" />
                            </font>
                         </Label>
+                        <TextField fx:id="inputTextField1HW" alignment="CENTER" layoutX="283.0" layoutY="89.0" onAction="#doInputValueHW" prefWidth="150.0" />
+                        <TextField fx:id="inputTextField2HW" alignment="CENTER" layoutX="283.0" layoutY="135.0" onAction="#doInputValueHW" prefWidth="150.0" />
+                        <Label layoutX="227.0" layoutY="240.0" text="Результат">
+                           <font>
+                              <Font name="Times New Roman" size="35.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="doInputValueHW" layoutX="425.0" layoutY="186.0" mnemonicParsing="false" onAction="#doInputValueHW" prefHeight="25.0" prefWidth="100.0" text="ВВОД" />
+                        <TextField fx:id="outputTextFieldHW" editable="false" layoutX="175.0" layoutY="294.0" prefHeight="25.0" prefWidth="250.0" />
                      </children></AnchorPane>
             </content>
           </Tab>
+            <Tab disable="true" text="LAB TWO">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

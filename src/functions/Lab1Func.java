@@ -11,7 +11,6 @@ import java.util.List;
  */
 public class Lab1Func {
     private List<Double> startParamOneArrayList = new ArrayList<Double>();
-    //    private ArrayList<Double> enterParamTwoArrayList = new ArrayList<Double>();
     private List<Double> resultArrayList = new ArrayList<Double>();
     TextField outputTextField;
 
@@ -30,8 +29,9 @@ public class Lab1Func {
         }
         this.outputTextField = outputTextField;
         Double[] borders = borders(inputValue);
-        if (borders[0]!=(null))
+        if (borders[0]!=(null)) {
             returnValue = doInterpolation(inputValue, borders);
+        }
         return returnValue;
     }
 
@@ -58,11 +58,7 @@ public class Lab1Func {
         returnString.append("Массив входного 1 параметра M ");
         for (Double item : this.startParamOneArrayList) {
             returnString.append("- " + item + " ");
-        }/*
-        returnString.append("\nМассив входного 2 параметра - H ");
-        for (Double item : this.enterParamTwoArrayList){
-            returnString.append("- " + item + " ");
-        }*/
+        }
         returnString.append("\nМассив результирующего параметра - R ");
         for (Double item : this.resultArrayList) {
             returnString.append("- " + item.intValue() + " ");

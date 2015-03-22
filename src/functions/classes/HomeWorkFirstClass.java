@@ -43,9 +43,9 @@ public class HomeWorkFirstClass {
 
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Параметр 1 - " + this.parameterFirst + "\nПараметр 2: \t Результат\n");
+        stringBuilder.append("Параметр 1 - ").append(this.parameterFirst).append("\nПараметр 2: \t Результат\n");
         for (Double item : this.parameterSecondArrayList) {
-            stringBuilder.append(item.intValue() + "\t\t\t\t\t" + this.resultArrayList.get(this.parameterSecondArrayList.indexOf(item)) + "\n");
+            stringBuilder.append(item.intValue()).append("\t\t\t\t\t").append(this.resultArrayList.get(this.parameterSecondArrayList.indexOf(item))).append("\n");
         }
         return stringBuilder.toString();
     }

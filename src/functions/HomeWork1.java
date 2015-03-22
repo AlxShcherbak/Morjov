@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class HomeWork1 {
     private List<HomeWorkFirstClass> parameters = new ArrayList<HomeWorkFirstClass>();
-    TextField outputTextField;
+    private TextField outputTextField;
 
     /**
      * Функция инициализации проведения интерполяции
@@ -19,9 +19,11 @@ public class HomeWork1 {
      * @param inputValue1     - входная величина 1
      * @param inputValue2     - входная величина 2
      * @param outputTextField - входное выходное текстовое поле
-     * @return
+     * @return - результат проведения интерполяции
+     * @throws java.lang.NullPointerException - Thrown when an application attempts to use {@code null} in a
+     *                                        case where an object is required.
      */
-    public Double doInterpolationEnterValues(double inputValue1, double inputValue2, TextField outputTextField) {
+    public Double doInterpolationEnterValues(double inputValue1, double inputValue2, TextField outputTextField) throws NullPointerException {
         this.outputTextField = outputTextField;
         new VariantSet().setEnterArrayListsVariant19(this.parameters);
         HomeWorkFirstClass firstIterationInterpolation = null;
@@ -44,6 +46,7 @@ public class HomeWork1 {
         }
         //System.out.print(firstIterationInterpolation);
 
+        assert firstIterationInterpolation != null;
         if (!existenceCheck(firstIterationInterpolation.getParameterSecondArrayList(), inputValue2)) {
             Double[] bordersToSecondIteration = border(inputValue2, firstIterationInterpolation);
             if (bordersToSecondIteration[0] != (null)) {
@@ -115,12 +118,10 @@ public class HomeWork1 {
      * @return -   результат интерполяции
      */
     private HomeWorkFirstClass doFirstInterpolation(double inputValue, HomeWorkFirstClass[] borders) {
-        HomeWorkFirstClass returnValue = null;
         Double resultBufferInterpolation;
         List<Double> resultArrayList = new ArrayList<Double>();
 
         for (Double item : borders[0].getParameterSecondArrayList()) {
-            Double par0, par1, par2, par3, par4, par5;
             resultBufferInterpolation = borders[0].getResultArrayList().get(borders[0].getParameterSecondArrayList().indexOf(item))
                     + (borders[1].getResultArrayList().get(borders[0].getParameterSecondArrayList().indexOf(item))
                     - borders[0].getResultArrayList().get(borders[0].getParameterSecondArrayList().indexOf(item)))
@@ -128,7 +129,7 @@ public class HomeWork1 {
                     * (inputValue - borders[0].getParameterFirst());
             resultArrayList.add(resultBufferInterpolation);
         }
-        returnValue = new HomeWorkFirstClass(inputValue, borders[0].getParameterSecondArrayList(), resultArrayList);
+        HomeWorkFirstClass returnValue = new HomeWorkFirstClass(inputValue, borders[0].getParameterSecondArrayList(), resultArrayList);
         return returnValue;
     }
 
@@ -140,8 +141,7 @@ public class HomeWork1 {
      * @return -   результат интерполяции
      */
     private Double doSecondInterpolation(double inputValue, Double[] borders, HomeWorkFirstClass firstInterpolationResult) {
-        Double returnValue = null;
-        returnValue = firstInterpolationResult.getResultArrayList().get(firstInterpolationResult.getParameterSecondArrayList().indexOf(borders[0]))
+        Double returnValue = firstInterpolationResult.getResultArrayList().get(firstInterpolationResult.getParameterSecondArrayList().indexOf(borders[0]))
                 + (firstInterpolationResult.getResultArrayList().get(firstInterpolationResult.getParameterSecondArrayList().indexOf(borders[1])) -
                 firstInterpolationResult.getResultArrayList().get(firstInterpolationResult.getParameterSecondArrayList().indexOf(borders[0]))) /
                 (borders[1] - borders[0]) * (inputValue - borders[0]);
@@ -152,45 +152,44 @@ public class HomeWork1 {
     /**
      * Проверка на существование входной величины в массиве условий
      *
-     * @param - входная величина
+     * @param checkThis - входная величина, то что мы ищем
+     * @param checkHere - входная величина, где мы ищим
      * @return -   boolean значение существования входной величины в массиве условий
      * true    -   существует
      * false   -   несуществует
      */
     private boolean existenceCheck(Double checkThis, List<HomeWorkFirstClass> checkHere) {
-        boolean result = false;
         for (HomeWorkFirstClass item : checkHere) {
             if (item.getParameterFirst().equals(checkThis)) {
                 return true;
             }
         }
-        return result;
+        return false;
     }
 
     /**
      * Проверка на существование входной величины в массиве условий
      *
-     * @param - входная величина
+     * @param checkHere - входная величина, где мы ищим
+     * @param checkThis - входная величина, то что мы ищем
      * @return -   boolean значение существования входной величины в массиве условий
      * true    -   существует
      * false   -   несуществует
      */
     private boolean existenceCheck(List<Double> checkHere, Double checkThis) {
-        boolean result = false;
         for (Double item : checkHere) {
             if (item.equals(checkThis)) {
                 return true;
             }
         }
-        return result;
+        return false;
     }
 
     /**
      * Вывести в поле вывода сообщение
      *
-     * @param massage - сообщение для вывода
      */
-    private void setMassageToOutputTextField(String massage) {
-        this.outputTextField.setText(massage);
+    private void setMassageToOutputTextField(String massageToOutputTextField) {
+        this.outputTextField.setText(massageToOutputTextField);
     }
 }

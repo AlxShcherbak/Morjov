@@ -18,13 +18,13 @@ public class ControllerToFxml {
 
     /**
      * @param actionEvent
-     * @throws java.lang.NumberFormatException - исключение конвертации текста в цыфру
+     * @throws NumberFormatException - исключение конвертации текста в цыфру
      */
     public void doInputValue(ActionEvent actionEvent) {
         outputTextField.clear();
         outputTextField.setAlignment(Pos.CENTER);
         if (!inputTextField.getText().isEmpty()) {
-            String enterValue = new String(inputTextField.getText());
+            String enterValue = inputTextField.getText();
             try {
                 double inputValueDouble = Double.parseDouble(enterValue);
                 Double resultInterpolation = new Lab1Func().doInterpolationEnterValues(inputValueDouble, outputTextField);

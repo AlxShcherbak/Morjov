@@ -6,6 +6,30 @@ import java.util.List;
  * Created by Alx Shcherbak on 22.03.2015.
  */
 public class VariantSet {
+    protected void setEnterArrayListsVariant13(List<Double> startParamOneArrayList, List<Double> resultArrayList) {
+        startParamOneArrayList.add((double) 0);
+        startParamOneArrayList.add(0.125);
+        startParamOneArrayList.add(0.25);
+        startParamOneArrayList.add(0.375);
+        startParamOneArrayList.add(0.5);
+        startParamOneArrayList.add(0.625);
+        startParamOneArrayList.add(0.75);
+        startParamOneArrayList.add(0.875);
+        startParamOneArrayList.add(1.0);
+        startParamOneArrayList.add(1.3);
+
+        resultArrayList.add(12000D);
+        resultArrayList.add(10800D);
+        resultArrayList.add(9800D);
+        resultArrayList.add(8850D);
+        resultArrayList.add(8000D);
+        resultArrayList.add(7100D);
+        resultArrayList.add(6250D);
+        resultArrayList.add(5300D);
+        resultArrayList.add(4400D);
+        resultArrayList.add(4000D);
+    }
+
     /**
      * Инициализация входных массивов значений
      * Вариант №19

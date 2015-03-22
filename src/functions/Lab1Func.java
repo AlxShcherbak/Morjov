@@ -7,19 +7,20 @@ import java.util.List;
 
 /**
  * Created by Alx Shcherbak on 20.03.2015.
+ *
  * @author Alx Shcherbak
  */
 public class Lab1Func {
     private List<Double> startParamOneArrayList = new ArrayList<Double>();
     private List<Double> resultArrayList = new ArrayList<Double>();
-    TextField outputTextField;
+    private TextField outputTextField;
 
     /**
      * Функция инициализации проведения интерполяции
      *
      * @param inputValue      - входная величина
      * @param outputTextField - входное выходное текстовое поле
-     * @return
+     * @return - результат интерполяции
      */
     public Double doInterpolationEnterValues(double inputValue, TextField outputTextField) {
         new VariantSet().setEnterArrayListsVariant19(this.startParamOneArrayList, this.resultArrayList);
@@ -29,7 +30,7 @@ public class Lab1Func {
         }
         this.outputTextField = outputTextField;
         Double[] borders = borders(inputValue);
-        if (borders[0]!=(null)) {
+        if (borders[0] != (null)) {
             returnValue = doInterpolation(inputValue, borders);
         }
         return returnValue;
@@ -38,7 +39,7 @@ public class Lab1Func {
     /**
      * дебаг метод
      *
-     * @param args
+     * @param args - массив строк потоков
      */
     public static void main(String args[]) {
         Lab1Func lab1Func = new Lab1Func();
@@ -54,18 +55,17 @@ public class Lab1Func {
      * @return -   преобразованый класс Lab1Func в строку
      */
     public String toString() {
-        StringBuffer returnString = new StringBuffer();
+        StringBuilder returnString = new StringBuilder();
         returnString.append("Массив входного 1 параметра M ");
         for (Double item : this.startParamOneArrayList) {
-            returnString.append("- " + item + " ");
+            returnString.append("- ").append(item).append(" ");
         }
         returnString.append("\nМассив результирующего параметра - R ");
         for (Double item : this.resultArrayList) {
-            returnString.append("- " + item.intValue() + " ");
+            returnString.append("- ").append(item.intValue()).append(" ");
         }
         return returnString.toString();
     }
-
 
 
     /**
@@ -74,7 +74,7 @@ public class Lab1Func {
      * @param massage - сообщение для вывода
      */
     private void setMassageToOutputTextField(String massage) {
-        this.outputTextField.setText(massage);
+        this.outputTextField.setText("Введеное значение вне условного массива");
     }
 
     /**
@@ -108,13 +108,12 @@ public class Lab1Func {
      * false   -   несуществует
      */
     private boolean existenceCheck(Double inputValue) {
-        boolean result = false;
         for (Double item : this.startParamOneArrayList) {
             if (item.equals(inputValue)) {
                 return true;
             }
         }
-        return result;
+        return false;
     }
 
     /**
@@ -142,8 +141,7 @@ public class Lab1Func {
      * @return -   результат интерполяции
      */
     private Double doInterpolation(double inputValue, Double[] borders) {
-        Double returnValue = null;
-        returnValue = getResult(borders[0]) + ((getResult(borders[1]) - getResult(borders[0])) /
+        Double returnValue = getResult(borders[0]) + ((getResult(borders[1]) - getResult(borders[0])) /
                 (borders[1] - borders[0]) * (inputValue - borders[0]));
         return returnValue;
     }

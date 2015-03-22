@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">morjov</string>
+    <string name="text_tab1">Lab1</string>
+    <string name="text_tab2">HomeWork</string>
+    <string name="text_tab3">Lab2</string>
+    <string name="text_tab_header">headsss</string>
+</resources>

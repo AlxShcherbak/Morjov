@@ -129,8 +129,7 @@ public class HomeWork1 {
                     * (inputValue - borders[0].getParameterFirst());
             resultArrayList.add(resultBufferInterpolation);
         }
-        HomeWorkFirstClass returnValue = new HomeWorkFirstClass(inputValue, borders[0].getParameterSecondArrayList(), resultArrayList);
-        return returnValue;
+        return new HomeWorkFirstClass(inputValue, borders[0].getParameterSecondArrayList(), resultArrayList);
     }
 
     /**
@@ -141,11 +140,10 @@ public class HomeWork1 {
      * @return -   результат интерполяции
      */
     private Double doSecondInterpolation(double inputValue, Double[] borders, HomeWorkFirstClass firstInterpolationResult) {
-        Double returnValue = firstInterpolationResult.getResultArrayList().get(firstInterpolationResult.getParameterSecondArrayList().indexOf(borders[0]))
+        return firstInterpolationResult.getResultArrayList().get(firstInterpolationResult.getParameterSecondArrayList().indexOf(borders[0]))
                 + (firstInterpolationResult.getResultArrayList().get(firstInterpolationResult.getParameterSecondArrayList().indexOf(borders[1])) -
                 firstInterpolationResult.getResultArrayList().get(firstInterpolationResult.getParameterSecondArrayList().indexOf(borders[0]))) /
                 (borders[1] - borders[0]) * (inputValue - borders[0]);
-        return returnValue;
     }
 
 
@@ -187,7 +185,6 @@ public class HomeWork1 {
 
     /**
      * Вывести в поле вывода сообщение
-     *
      */
     private void setMassageToOutputTextField(String massageToOutputTextField) {
         this.outputTextField.setText(massageToOutputTextField);

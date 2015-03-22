@@ -16,11 +16,11 @@ public class Lab2XFxIteration {
         this.iteration = iteration;
     }
 
-    public void iterationDo(){
+    public void iterationDo() {
         this.iteration++;
     }
 
-    public void printInForm(TextField outputX,TextField outputFX,TextField outputIteration){
+    public void printInForm(TextField outputX, TextField outputFX, TextField outputIteration) {
         outputX.setText(String.valueOf(this.x));
         outputFX.setText(String.valueOf(this.fX));
         outputIteration.setText(String.valueOf(this.iteration));

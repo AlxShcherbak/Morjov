@@ -7,12 +7,10 @@ import java.util.List;
 
 /**
  * Created by Alx Shcherbak on 20.03.2015.
- *
  * @author Alx Shcherbak
  */
 public class Lab1Func {
     private List<Double> startParamOneArrayList = new ArrayList<Double>();
-    //    private ArrayList<Double> enterParamTwoArrayList = new ArrayList<Double>();
     private List<Double> resultArrayList = new ArrayList<Double>();
     TextField outputTextField;
 
@@ -24,15 +22,16 @@ public class Lab1Func {
      * @return
      */
     public Double doInterpolationEnterValues(double inputValue, TextField outputTextField) {
-        new VariantSet().setEnterArrayListsVariant19(this.startParamOneArrayList, this.resultArrayList);//-variant
+        new VariantSet().setEnterArrayListsVariant19(this.startParamOneArrayList, this.resultArrayList);
         Double returnValue = null;
         if (existenceCheck(inputValue)) {
             return getResult(inputValue);
         }
         this.outputTextField = outputTextField;
         Double[] borders = borders(inputValue);
-        if (borders[0] != (null))
+        if (borders[0]!=(null)) {
             returnValue = doInterpolation(inputValue, borders);
+        }
         return returnValue;
     }
 
@@ -55,21 +54,18 @@ public class Lab1Func {
      * @return -   преобразованый класс Lab1Func в строку
      */
     public String toString() {
-        StringBuilder returnString = new StringBuilder();
+        StringBuffer returnString = new StringBuffer();
         returnString.append("Массив входного 1 параметра M ");
         for (Double item : this.startParamOneArrayList) {
             returnString.append("- " + item + " ");
-        }/*
-        returnString.append("\nМассив входного 2 параметра - H ");
-        for (Double item : this.enterParamTwoArrayList){
-            returnString.append("- " + item + " ");
-        }*/
+        }
         returnString.append("\nМассив результирующего параметра - R ");
         for (Double item : this.resultArrayList) {
             returnString.append("- " + item.intValue() + " ");
         }
         return returnString.toString();
     }
+
 
 
     /**
@@ -112,12 +108,13 @@ public class Lab1Func {
      * false   -   несуществует
      */
     private boolean existenceCheck(Double inputValue) {
+        boolean result = false;
         for (Double item : this.startParamOneArrayList) {
             if (item.equals(inputValue)) {
                 return true;
             }
         }
-        return false;
+        return result;
     }
 
     /**
@@ -145,7 +142,9 @@ public class Lab1Func {
      * @return -   результат интерполяции
      */
     private Double doInterpolation(double inputValue, Double[] borders) {
-        return getResult(borders[0]) + ((getResult(borders[1]) - getResult(borders[0])) /
+        Double returnValue = null;
+        returnValue = getResult(borders[0]) + ((getResult(borders[1]) - getResult(borders[0])) /
                 (borders[1] - borders[0]) * (inputValue - borders[0]));
+        return returnValue;
     }
 }

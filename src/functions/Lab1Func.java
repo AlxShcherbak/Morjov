@@ -3,15 +3,16 @@ package functions;
 import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Alx Shcherbak on 20.03.2015.
  * @author Alx Shcherbak
  */
 public class Lab1Func {
-    private ArrayList<Double> startParamOneArrayList = new ArrayList<Double>();
+    private List<Double> startParamOneArrayList = new ArrayList<Double>();
     //    private ArrayList<Double> enterParamTwoArrayList = new ArrayList<Double>();
-    private ArrayList<Double> resultArrayList = new ArrayList<Double>();
+    private List<Double> resultArrayList = new ArrayList<Double>();
     TextField outputTextField;
 
     /**
@@ -22,7 +23,7 @@ public class Lab1Func {
      * @return
      */
     public Double doInterpolationEnterValues(double inputValue, TextField outputTextField) {
-        this.setEnterArrayLists();
+        new VariantSet().setEnterArrayListsVariant19(this.startParamOneArrayList, this.resultArrayList);
         Double returnValue = null;
         if (existenceCheck(inputValue)) {
             return getResult(inputValue);
@@ -69,41 +70,7 @@ public class Lab1Func {
         return returnString.toString();
     }
 
-    /**
-     * Инициализация входных массивов значений
-     * Вариант №19
-     */
-    private void setEnterArrayLists() {
-        this.startParamOneArrayList.add((double) 0);
-        this.startParamOneArrayList.add(0.125);
-        this.startParamOneArrayList.add(0.25);
-        this.startParamOneArrayList.add(0.375);
-        this.startParamOneArrayList.add(0.5);
-        this.startParamOneArrayList.add(0.625);
-        this.startParamOneArrayList.add(0.75);
-        this.startParamOneArrayList.add(0.875);
-        this.startParamOneArrayList.add(1.0);
-        this.startParamOneArrayList.add(1.5);
-/*
-        this.enterParamTwoArrayList.add((double) 0);
-        this.enterParamTwoArrayList.add((double) 2);
-        this.enterParamTwoArrayList.add((double) 4);
-        this.enterParamTwoArrayList.add((double) 6);
-        this.enterParamTwoArrayList.add((double) 8);
-        this.enterParamTwoArrayList.add((double) 10);
-        this.enterParamTwoArrayList.add((double) 12);
-*/
-        this.resultArrayList.add((double) 9850);
-        this.resultArrayList.add((double) 8850);
-        this.resultArrayList.add((double) 8070);
-        this.resultArrayList.add((double) 7370);
-        this.resultArrayList.add((double) 6850);
-        this.resultArrayList.add((double) 6330);
-        this.resultArrayList.add((double) 5800);
-        this.resultArrayList.add((double) 5270);
-        this.resultArrayList.add((double) 4750);
-        this.resultArrayList.add((double) 4000);
-    }
+
 
     /**
      * Вывести в поле вывода сообщение

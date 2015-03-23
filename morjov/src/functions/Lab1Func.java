@@ -19,8 +19,27 @@ public class Lab1Func {
      * @param inputValue      - входная величина
      * @return - результат интерполяции
      */
-    public Double doInterpolationEnterValues(double inputValue) {
-        new VariantSet().setEnterArrayListsVariant19(this.startParamOneArrayList, this.resultArrayList);
+    public Double doInterpolationEnterValues  (double inputValue,int variant) throws Exception {
+        switch (variant){
+            case 13:
+                new VariantSet().setEnterArrayListsVariant13(this.startParamOneArrayList, this.resultArrayList);
+            case 19:
+                new VariantSet().setEnterArrayListsVariant19(this.startParamOneArrayList, this.resultArrayList);
+                break;
+            default:
+                throw new Exception("Vrong variant");
+        }
+        Double returnValue = null;
+        if (existenceCheck(inputValue)) {
+            return getResult(inputValue);
+        }
+        Double[] borders = borders(inputValue);
+        if (borders[0] != (null)) {
+            returnValue = doInterpolation(inputValue, borders);
+        }
+        return returnValue;
+    }
+    public Double doInterpolationEnterValues  (double inputValue) throws Exception {
         Double returnValue = null;
         if (existenceCheck(inputValue)) {
             return getResult(inputValue);
@@ -37,10 +56,10 @@ public class Lab1Func {
      *
      * @param args - массив строк потоков
      */
-    public static void main(String args[]) {
+    public static void main (String args[]) throws Exception {
         Lab1Func lab1Func = new Lab1Func();
         //lab1Func.setEnterArrayLists();
-        System.out.println(lab1Func.doInterpolationEnterValues(1.2));
+        //System.out.println(lab1Func.doInterpolationEnterValues(1.2));
         System.out.println(lab1Func);
     }
 

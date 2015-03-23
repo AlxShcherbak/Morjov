@@ -22,7 +22,7 @@ public class Lab2Func {
      * @param inputValue3    - количество проводимых итераций
      * @return - результат точка экстремума, значение функции и количиство итераций
      */
-    public Lab2XFxIteration fibonacci(Double inputValue1, Double inputValue2, Double inputValue3) {
+    public Lab2XFxIteration fibonacci(Double inputValue1, Double inputValue2, Double inputValue3) throws Exception {
         new VariantSet().setEnterArrayListsVariant19(this.parameterList, this.resultList);
         if (!this.fibonacciList.isEmpty() | (this.fibonacciList.size() < inputValue3)) {
             fibonacciNumbers(inputValue3.longValue());
@@ -48,7 +48,7 @@ public class Lab2Func {
      * @param iterator           - количество итераций для выполнения
      * @return
      */
-    private Lab2XFxIteration fibonacciRecursive(double a, double b, double x1, double x2, int iterator) {
+    private Lab2XFxIteration fibonacciRecursive(double a, double b, double x1, double x2, int iterator) throws Exception {
         iterator--;
         Lab2XFxIteration fibonacciRecursiveReturn;
         if (new Lab1Func().doInterpolationEnterValues(x1) > (new Lab1Func().doInterpolationEnterValues(x2))) {
@@ -75,7 +75,7 @@ public class Lab2Func {
      * @param inputValue3    - погрешность при нахождении экстремума
      * @return - результат точка экстремума, значение функции и количиство итераций
      */
-    public Lab2XFxIteration goldenCut(Double inputValue1, Double inputValue2, Double inputValue3) {
+    public Lab2XFxIteration goldenCut(Double inputValue1, Double inputValue2, Double inputValue3) throws Exception {
         new VariantSet().setEnterArrayListsVariant19(this.parameterList, this.resultList);
         Lab2XFxIteration goldenCutReturn;
         double x1, x2;

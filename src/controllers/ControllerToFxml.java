@@ -7,7 +7,6 @@ import functions.classes.Lab2XFxIteration;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
@@ -46,6 +45,7 @@ public class ControllerToFxml implements Initializable {
                         "Золотое сечение", "Фибоначчи")
         );
         //tabLab2.setDisable(true);
+        tabHW.setDisable(true);
     }
 
     /**
@@ -54,13 +54,14 @@ public class ControllerToFxml implements Initializable {
      */
     public void doInputValue(ActionEvent actionEvent) {
         outputTextField.clear();
-        outputTextField.setAlignment(Pos.CENTER);
         if (!inputTextField.getText().isEmpty()) {
             String inputValueString = inputTextField.getText();
             try {
                 double inputValueDouble = Double.parseDouble(inputValueString);
                 Double resultInterpolation = new Lab1Func().doInterpolationEnterValues(inputValueDouble, outputTextField);
-                outputTextField.setText(String.valueOf(resultInterpolation));
+                if (resultInterpolation != null) {
+                    outputTextField.setText(String.valueOf(resultInterpolation));
+                }
             } catch (NumberFormatException e) {                 // Введеное значение не цифра
                 System.out.println("Введеное начальное значение не цифра");
                 outputTextField.setText("Введеное начальное значение не цифра");
@@ -73,7 +74,6 @@ public class ControllerToFxml implements Initializable {
 
     public void doInputValueHW(ActionEvent actionEvent) {
         outputTextFieldHW.clear();
-        outputTextFieldHW.setAlignment(Pos.CENTER);
         if (!(inputTextField1HW.getText().isEmpty() & inputTextField2HW.getText().isEmpty())) {
             String inputValueString1 = inputTextField1HW.getText();
             String inputValueString2 = inputTextField2HW.getText();
@@ -96,7 +96,6 @@ public class ControllerToFxml implements Initializable {
         outputLab2X.clear();
         outputLab2FX.clear();
         outputLab2IteratNum.clear();
-        outputLab2ErrorLog.setAlignment(Pos.CENTER);
         if (!choiceBoxLab2.getSelectionModel().isEmpty()) {
             if (!(inputStartDiap.getText().isEmpty() & inputEndDiap.getText().isEmpty() & inputDelta.getText().isEmpty())) {
                 String inputValueString1 = inputStartDiap.getText();
@@ -112,6 +111,7 @@ public class ControllerToFxml implements Initializable {
                                 Double.parseDouble(inputValueString2), Double.parseDouble(inputValueString3), outputLab2ErrorLog);
                     }
                     System.out.println(resultValue);
+                    assert resultValue != null;
                     resultValue.printInForm(outputLab2X, outputLab2FX, outputLab2IteratNum);
                 } catch (NumberFormatException e) {                 // Введеное значение не цифра
                     System.out.println("Введеное начальное значение не цифра");

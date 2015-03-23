@@ -66,6 +66,7 @@ public class Lab2Func {
         if (iterator == 1) {
             fibonacciRecursiveReturn = new Lab2XFxIteration(x1, new Lab1Func().doInterpolationEnterValues(x1, outputLab2ErrorLog));
         } else fibonacciRecursiveReturn = fibonacciRecursive(a, b, x1, x2, iterator, outputLab2ErrorLog);
+        fibonacciRecursiveReturn.incrementIterator();
         return fibonacciRecursiveReturn;
     }
 

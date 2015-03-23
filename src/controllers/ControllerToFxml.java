@@ -60,7 +60,9 @@ public class ControllerToFxml implements Initializable {
             try {
                 double inputValueDouble = Double.parseDouble(inputValueString);
                 Double resultInterpolation = new Lab1Func().doInterpolationEnterValues(inputValueDouble, outputTextField);
-                outputTextField.setText(String.valueOf(resultInterpolation));
+                if (resultInterpolation != null) {
+                    outputTextField.setText(String.valueOf(resultInterpolation));
+                }
             } catch (NumberFormatException e) {                 // Введеное значение не цифра
                 System.out.println("Введеное начальное значение не цифра");
                 outputTextField.setText("Введеное начальное значение не цифра");

@@ -10,10 +10,10 @@ import java.util.List;
  * Created by Alx Shcherbak on 22.03.2015.
  */
 public class Lab2Func {
-    List<Double> parameterList = new ArrayList<Double>();
-    List<Double> resultList = new ArrayList<Double>();
-    List<Long> fibonacciList = new ArrayList<Long>();
-    final Double goldenCut = 1.618d;
+    private List<Double> parameterList = new ArrayList<Double>();
+    private List<Double> resultList = new ArrayList<Double>();
+    private List<Long> fibonacciList = new ArrayList<Long>();
+    private final Double goldenCut = 1.618d;
 
     /**
      * Нахождение экстремума по методу Фибоначчи
@@ -53,7 +53,7 @@ public class Lab2Func {
      */
     private Lab2XFxIteration fibonacciRecursive(double a, double b, double x1, double x2, int iterator, TextField outputLab2ErrorLog) {
         iterator--;
-        Lab2XFxIteration fibonacciRecursiveReturn = null;
+        Lab2XFxIteration fibonacciRecursiveReturn;
         if (new Lab1Func().doInterpolationEnterValues(x1, outputLab2ErrorLog) > (new Lab1Func().doInterpolationEnterValues(x2, outputLab2ErrorLog))) {
             a = x1;
             x1 = x2;
@@ -82,7 +82,7 @@ public class Lab2Func {
     public Lab2XFxIteration goldenCut(Double inputValue1, Double inputValue2, Double inputValue3, TextField errorTextField) {
         new VariantSet().setEnterArrayListsVariant19(this.parameterList, this.resultList);
         Lab2XFxIteration goldenCutReturn;
-        double x1, x2, fX1, fX2;
+        double x1, x2;
 
         x1 = inputValue2 - (inputValue2 - inputValue1) / goldenCut;
         x2 = inputValue1 + (inputValue2 - inputValue1) / goldenCut;

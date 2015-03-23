@@ -3,57 +3,48 @@ package ua.ho.godex.morjov;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.Toast;
+import functions.Lab1Func;
 
 public class Morjov extends Activity {
+    EditText tab1Par1;
     /**
      * Called when the activity is first created.
      */
     /** Called when the activity is first created. */
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        /*setContentView(R.);
+        tab1Par1= (EditText) findViewById(R.id.tab1Par1);
 
-        TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
-        // инициализация
-        tabHost.setup();
+        TabHost tabs = (TabHost) findViewById(android.R.id.tabhost);
 
-        TabHost.TabSpec tabSpec;
+        tabs.setup();
 
-        // создаем вкладку и указываем тег
-        tabSpec = tabHost.newTabSpec("tag1");
-        // название вкладки
-        tabSpec.setIndicator("Вкладка 1");
-        // указываем id компонента из FrameLayout, он и станет содержимым
-        tabSpec.setContent(R.id.tvTab1);
-        // добавляем в корневой элемент
-        tabHost.addTab(tabSpec);
+        TabHost.TabSpec spec = tabs.newTabSpec("tag1");
 
-        tabSpec = tabHost.newTabSpec("tag2");
-        // указываем название и картинку
-        // в нашем случае вместо картинки идет xml-файл,
-        // который определяет картинку по состоянию вкладки
-        tabSpec.setIndicator("Вкладка 2", getResources().getDrawable(R.drawable.tab_icon_selector));
-        tabSpec.setContent(R.id.tvTab2);
-        tabHost.addTab(tabSpec);
+        spec.setContent(R.id.tab1);
+        spec.setIndicator("Lab1");
+        tabs.addTab(spec);
 
-        tabSpec = tabHost.newTabSpec("tag3");
-        // создаем View из layout-файла
-        View v = getLayoutInflater().inflate(R.layout.tab_header, null);
-        // и устанавливаем его, как заголовок
-        tabSpec.setIndicator(v);
-        tabSpec.setContent(R.id.tvTab3);
-        tabHost.addTab(tabSpec);
+        spec = tabs.newTabSpec("tag2");
+        spec.setContent(R.id.tab2);
+        spec.setIndicator("HomeWork");
+        tabs.addTab(spec);
 
-        // вторая вкладка будет выбрана по умолчанию
-        tabHost.setCurrentTabByTag("tag2");
+        spec = tabs.newTabSpec("tag3");
+        spec.setContent(R.id.tab3);
+        spec.setIndicator("Lab2");
+        tabs.addTab(spec);
+        tabs.setCurrentTab(0);*/
+    }
 
-        // обработчик переключения вкладок
-        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-            public void onTabChanged(String tabId) {
-                Toast.makeText(getBaseContext(), "tabId = " + tabId, Toast.LENGTH_SHORT).show();
-            }
-        });
+    public void lab1Calc(View view) {
+        Lab1Func lab1Func=new Lab1Func();
+        lab1Func.doInterpolationEnterValues(Double.parseDouble(tab1Par1.getText().toString()));
+
     }
 }

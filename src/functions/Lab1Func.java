@@ -36,6 +36,19 @@ public class Lab1Func {
         return returnValue;
     }
 
+    public Double doInterpolationEnterValues(double inputValue) {
+        new VariantSet().setEnterArrayListsVariant19(this.startParamOneArrayList, this.resultArrayList);
+        Double returnValue = null;
+        if (existenceCheck(inputValue)) {
+            return getResult(inputValue);
+        }
+        Double[] borders = borders(inputValue);
+        if (borders[0] != (null)) {
+            returnValue = doInterpolation(inputValue, borders);
+        }
+        return returnValue;
+    }
+
     /**
      * дебаг метод
      *

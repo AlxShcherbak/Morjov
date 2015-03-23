@@ -1,45 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
-    <TabHost
-            android:id="@android:id/tabhost"
+
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+         android:id="@android:id/tabhost"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent" >
+
+    <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-        <LinearLayout
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+        <TabWidget
+                android:id="@android:id/tabs"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical">
-            <TabWidget
-                    android:id="@android:id/tabs"
+                android:layout_height="wrap_content" >
+        </TabWidget>
+        <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+            <LinearLayout
+                    android:id="@+id/tab1"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-            </TabWidget>
-            <FrameLayout
-                    android:id="@android:id/tabcontent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tab1Par1" android:inputType="numberSigned"/>
+                <Button
+                        android:id="@+id/buttonOnTab1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Input"
+                        android:onClick="lab1Calc"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Result"
+                        android:id="@+id/textView" android:layout_gravity="center_horizontal"/>
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tab1Output" android:layout_gravity="center_horizontal" android:enabled="true" android:editable="false"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="..."
+                        android:id="@+id/tab1Log" android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/tab2"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-                <TextView
-                        android:id="@+id/tvTab1"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                <Button
+                        android:id="@+id/button2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/text_tab1">
-                </TextView>
-                <TextView
-                        android:id="@+id/tvTab2"
+                        android:text="Кнопка на второй вкладке" />
+            </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                <Button
+                        android:id="@+id/button3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/text_tab2">
-                </TextView>
-                <TextView
-                        android:id="@+id/tvTab3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_tab3">
-                </TextView>
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
-</LinearLayout>
+                        android:text="Кнопка на третьей вкладке" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</TabHost>

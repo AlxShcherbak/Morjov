@@ -61,7 +61,6 @@ public class Morjov extends Activity {
         Lab1Func lab1Func=new Lab1Func();
         try {
             tab1Output.setText(lab1Func.doInterpolationEnterValues(Double.parseDouble(tab1Par1.getText().toString()),Integer.parseInt(tab1Var.getText().toString())).toString());
-
             tab1Log.setText("...");
         } catch (Exception e) {
             tab1Log.setText(e.toString());

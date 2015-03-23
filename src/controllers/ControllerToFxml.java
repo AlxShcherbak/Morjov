@@ -45,7 +45,7 @@ public class ControllerToFxml implements Initializable {
         choiceBoxLab2.setItems(FXCollections.observableArrayList(
                         "Золотое сечение", "Фибоначчи")
         );
-        tabLab2.setDisable(true);
+        //tabLab2.setDisable(true);
     }
 
     /**
@@ -93,23 +93,26 @@ public class ControllerToFxml implements Initializable {
 
     public void doInputValueLab2(ActionEvent actionEvent) {
         outputLab2ErrorLog.clear();
+        outputLab2X.clear();
+        outputLab2FX.clear();
+        outputLab2IteratNum.clear();
         outputLab2ErrorLog.setAlignment(Pos.CENTER);
-        if (!choiceBoxLab2.getSelectionModel().isEmpty()){
+        if (!choiceBoxLab2.getSelectionModel().isEmpty()) {
             if (!(inputStartDiap.getText().isEmpty() & inputEndDiap.getText().isEmpty() & inputDelta.getText().isEmpty())) {
                 String inputValueString1 = inputStartDiap.getText();
                 String inputValueString2 = inputEndDiap.getText();
                 String inputValueString3 = inputDelta.getText();
                 Lab2XFxIteration resultValue = null;
                 try {
-                if (choiceBoxLab2.getSelectionModel().getSelectedItem().toString().equals("Золотое сечение")){
-                   resultValue = new Lab2Func().goldenCut(Double.parseDouble(inputValueString1),
-                           Double.parseDouble(inputValueString2),Double.parseDouble(inputValueString3));
-                } else if (choiceBoxLab2.getSelectionModel().getSelectedItem().toString().equals("Фибоначчи")){
-                    resultValue = new Lab2Func().fibonacci(Double.parseDouble(inputValueString1),
-                            Double.parseDouble(inputValueString2),Double.parseDouble(inputValueString3));
-                }
+                    if (choiceBoxLab2.getSelectionModel().getSelectedItem().toString().equals("Золотое сечение")) {
+                        resultValue = new Lab2Func().goldenCut(Double.parseDouble(inputValueString1),
+                                Double.parseDouble(inputValueString2), Double.parseDouble(inputValueString3), outputLab2ErrorLog);
+                    } else if (choiceBoxLab2.getSelectionModel().getSelectedItem().toString().equals("Фибоначчи")) {
+                        resultValue = new Lab2Func().fibonacci(Double.parseDouble(inputValueString1),
+                                Double.parseDouble(inputValueString2), Double.parseDouble(inputValueString3), outputLab2ErrorLog);
+                    }
                     System.out.println(resultValue);
-                    resultValue.printInForm(outputLab2X,outputLab2FX,outputLab2IteratNum);
+                    resultValue.printInForm(outputLab2X, outputLab2FX, outputLab2IteratNum);
                 } catch (NumberFormatException e) {                 // Введеное значение не цифра
                     System.out.println("Введеное начальное значение не цифра");
                     outputLab2ErrorLog.setText("Введеное начальное значение не цифра");

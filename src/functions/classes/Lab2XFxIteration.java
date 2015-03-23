@@ -10,14 +10,18 @@ public class Lab2XFxIteration {
     private double fX;
     private long iteration;
 
-    public Lab2XFxIteration(double x, double fX, long iteration) {
+    public Lab2XFxIteration(double x, double fX) {
         this.x = x;
         this.fX = fX;
-        this.iteration = iteration;
+        this.iteration = 0;
     }
 
-    public void iterationDo() {
+    public void incrementIterator() {
         this.iteration++;
+    }
+
+    public void decrementIterator() {
+        this.iteration--;
     }
 
     public void printInForm(TextField outputX, TextField outputFX, TextField outputIteration) {

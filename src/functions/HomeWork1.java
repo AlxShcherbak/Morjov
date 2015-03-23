@@ -186,7 +186,6 @@ public class HomeWork1 {
 
     /**
      * Вывести в поле вывода сообщение
-     *
      */
     private void setMassageToOutputTextField(String massageToOutputTextField) {
         this.outputTextField.setText(massageToOutputTextField);

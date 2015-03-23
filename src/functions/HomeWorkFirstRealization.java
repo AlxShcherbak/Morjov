@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Alx Shcherbak on 21.03.2015.
  */
-public class HomeWork1 {
+public class HomeWorkFirstRealization {
     private List<HomeWorkFirstClass> parameters = new ArrayList<HomeWorkFirstClass>();
     private TextField outputTextField;
 

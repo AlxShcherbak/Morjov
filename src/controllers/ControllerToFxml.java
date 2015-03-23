@@ -1,6 +1,6 @@
 package controllers;
 
-import functions.HomeWork1;
+import functions.HomeWorkFirstRealization;
 import functions.Lab1Func;
 import functions.Lab2Func;
 import functions.classes.Lab2XFxIteration;
@@ -78,9 +78,11 @@ public class ControllerToFxml implements Initializable {
             String inputValueString1 = inputTextField1HW.getText();
             String inputValueString2 = inputTextField2HW.getText();
             try {
-                Double resultInterpolation = new HomeWork1().doInterpolationEnterValues(Double.parseDouble(inputValueString1),
+                Double resultInterpolation = new HomeWorkFirstRealization().doInterpolationEnterValues(Double.parseDouble(inputValueString1),
                         Double.parseDouble(inputValueString2), outputTextFieldHW);
-                outputTextFieldHW.setText(String.valueOf(resultInterpolation));
+                if (resultInterpolation != null) {
+                    outputTextFieldHW.setText(String.valueOf(resultInterpolation));
+                }
             } catch (NumberFormatException e) {                 // Введеное значение не цифра
                 System.out.println("Введеное начальное значение не цифра");
                 outputTextFieldHW.setText("Введеное начальное значение не цифра");

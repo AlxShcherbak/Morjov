@@ -10,6 +10,7 @@ import functions.Lab1Func;
 
 public class Morjov extends Activity {
     EditText tab1Par1;
+    EditText tab1Output;
     /**
      * Called when the activity is first created.
      */
@@ -17,8 +18,10 @@ public class Morjov extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*setContentView(R.);
+        setContentView(R.layout.main);
         tab1Par1= (EditText) findViewById(R.id.tab1Par1);
+
+        tab1Output= (EditText) findViewById(R.id.tab1Output);
 
         TabHost tabs = (TabHost) findViewById(android.R.id.tabhost);
 
@@ -39,12 +42,12 @@ public class Morjov extends Activity {
         spec.setContent(R.id.tab3);
         spec.setIndicator("Lab2");
         tabs.addTab(spec);
-        tabs.setCurrentTab(0);*/
+        tabs.setCurrentTab(0);
     }
 
     public void lab1Calc(View view) {
         Lab1Func lab1Func=new Lab1Func();
-        lab1Func.doInterpolationEnterValues(Double.parseDouble(tab1Par1.getText().toString()));
+        tab1Output.setText(lab1Func.doInterpolationEnterValues(Double.parseDouble(tab1Par1.getText().toString())).toString());
 
     }
 }

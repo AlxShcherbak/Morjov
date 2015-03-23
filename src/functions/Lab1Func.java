@@ -141,7 +141,7 @@ public class Lab1Func {
      * @return -   результат интерполяции
      */
     private Double doInterpolation(double inputValue, Double[] borders) {
-        return getResult(borders[0]) + ((getResult(borders[1]) - getResult(borders[0])) /
-                (borders[1] - borders[0]) * (inputValue - borders[0]));
+        return (getResult(borders[0]) + ((getResult(borders[1]) - getResult(borders[0])) /
+                (borders[1] - borders[0]) * (inputValue - borders[0])));
     }
 }

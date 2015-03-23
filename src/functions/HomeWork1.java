@@ -129,6 +129,7 @@ public class HomeWork1 {
                     * (inputValue - borders[0].getParameterFirst());
             resultArrayList.add(resultBufferInterpolation);
         }
+
         return new HomeWorkFirstClass(inputValue, borders[0].getParameterSecondArrayList(), resultArrayList);
     }
 
@@ -185,6 +186,7 @@ public class HomeWork1 {
 
     /**
      * Вывести в поле вывода сообщение
+     *
      */
     private void setMassageToOutputTextField(String massageToOutputTextField) {
         this.outputTextField.setText(massageToOutputTextField);

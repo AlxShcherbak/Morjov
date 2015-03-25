@@ -30,11 +30,11 @@
                         android:layout_height="wrap_content"
                         android:inputType="numberSigned"
                         android:ems="10"
-                        android:id="@+id/tab1Var" android:layout_gravity="center_horizontal"/>
+                        android:id="@+id/tab1Var" android:layout_gravity="center_horizontal" android:text="13"/>
                 <EditText
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tab1Par1" android:inputType="numberSigned|numberDecimal"/>
+                        android:id="@+id/tab1Par1" android:inputType="numberSigned|numberDecimal" android:text="1"/>
                 <Button
                         android:id="@+id/buttonOnTab1"
                         android:layout_width="wrap_content"

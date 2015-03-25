@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
-import functions.Lab1Func;
+import ua.ho.godex.morjov.functions.Lab1;
 
 public class Morjov extends Activity {
     EditText tab1Var;
@@ -58,12 +58,13 @@ public class Morjov extends Activity {
     }
 
     public void lab1Calc(View view) {
-        Lab1Func lab1Func=new Lab1Func();
         try {
-            tab1Output.setText(lab1Func.doInterpolationEnterValues(Double.parseDouble(tab1Par1.getText().toString()),Integer.parseInt(tab1Var.getText().toString())).toString());
+            tab1Output.setText(Lab1.doInterpolation(tab1Par1.getText().toString(),tab1Var.getText().toString()).toString());
             tab1Log.setText("...");
         } catch (Exception e) {
             tab1Log.setText(e.toString());
+            tab1Output.setText("");
         }
+
     }
 }

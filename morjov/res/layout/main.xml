@@ -96,8 +96,14 @@
                         android:id="@+id/buttonOnTab2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Input"
+                        android:text="Show_data"
                         android:onClick="HWShowDataFile"/>
+                <Button
+                        android:id="@+id/button3OnTab2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Сalc"
+                        android:onClick="HWCalc"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

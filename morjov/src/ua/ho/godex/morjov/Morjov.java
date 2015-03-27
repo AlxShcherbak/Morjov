@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
+import ua.ho.godex.morjov.functions.HomeWork1;
 import ua.ho.godex.morjov.functions.Lab1;
 import ua.ho.godex.morjov.functions.Variants;
 
@@ -80,17 +81,25 @@ public class Morjov extends Activity {
     }
 
     public void HWCalc(View view) {
+        try {
+            tab2Output.setText(HomeWork1.doBilinearInterpolation(tab1Par1.getText().toString(), tab1Var.getText().toString(), new File(tab2FilePath.getText().toString())).toString());
+            tab2Log.setText("...");
+        } catch (Exception e) {
+            tab2Log.setText(e.toString());
+            tab2Output.setText("");
+        }
     }
 
     public void HWShowDataFile(View view) {
         try {
-            for(Trio trio:Variants.getHW1Data(new File(tab2FilePath.getText().toString()))){
-                tab2Log.setText(tab2Log.getText()+"\n"+trio.toString());
+            for (Trio trio : Variants.getHW1Data(new File(tab2FilePath.getText().toString()))) {
+                tab2Log.setText(tab2Log.getText() + "\n" + trio.toString());
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     public void selectDataFile(View view) {
         int FILE_SELECT_CODE = 0;
         Intent intent1 = new Intent(Intent.ACTION_GET_CONTENT);

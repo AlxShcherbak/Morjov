@@ -43,14 +43,14 @@ public class HomeWork1 {
         } catch (Exception e) {
             e.initCause(new Exception("Проверте правильность пути к фалу"));
         }
-        //TODO проверка диапазона
+        //проверка диапазона
         if (inputX < pairList.get(0).posX() || inputX > pairList.get(pairList.size() - 1).posX()) {
             throw new Exception("X вне диапазона");
         }
         if (inputY < pairList.get(0).posY() || inputY > pairList.get(pairList.size() - 1).posY()) {
             throw new Exception("Y вне диапазона");
         }
-        //TODO нахождения диапазона где точка проверка диапазона
+        //нахождения диапазона где точка проверка диапазона
         Double yMin = null, yMax = null, xMin = null, xMax = null;
         Trio q11 = null, q12 = null, q21 = null, q22 = null;
         //find yMin yMax

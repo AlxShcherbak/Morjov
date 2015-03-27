@@ -22,6 +22,7 @@ public class Morjov extends Activity {
     EditText tab1Output;
     TextView tab1Log;
     EditText tab2Par1;
+    EditText tab2Par2;
     EditText tab2Output;
     EditText tab2FilePath;
 
@@ -43,6 +44,8 @@ public class Morjov extends Activity {
         tab1Log = (TextView) findViewById(R.id.tab1Log);
 
         tab2Par1 = (EditText) findViewById(R.id.tab2Par1);
+
+        tab2Par2 = (EditText) findViewById(R.id.tab2Par2);
         tab2Output = (EditText) findViewById(R.id.tab2Output);
         tab2Log = (TextView) findViewById(R.id.tab2Log);
 
@@ -82,10 +85,11 @@ public class Morjov extends Activity {
 
     public void HWCalc(View view) {
         try {
-            tab2Output.setText(HomeWork1.doBilinearInterpolation(tab1Par1.getText().toString(), tab1Var.getText().toString(), new File(tab2FilePath.getText().toString())).toString());
+            tab2Output.setText(HomeWork1.doBilinearInterpolation(tab2Par1.getText().toString(), tab2Par2.getText().toString(), new File(tab2FilePath.getText().toString())).toString());
             tab2Log.setText("...");
         } catch (Exception e) {
-            tab2Log.setText(e.toString());
+            for(StackTraceElement stackTraceElement:e.getStackTrace())
+            tab2Log.setText(tab2Log.getText()+"\n"+stackTraceElement.toString());
             tab2Output.setText("");
         }
     }

@@ -64,6 +64,7 @@ public class HomeWork1 {
                 xMax = pairList.get(pos + 1).posX();
             }
         }
+        //TODO не работает пересечение
         //Выбрать точки
         for (Trio trio : pairList) {
             if (trio.posX().equals(xMin) && trio.posY().equals(yMin))

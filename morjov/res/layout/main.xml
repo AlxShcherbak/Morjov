@@ -3,22 +3,22 @@
 <TabHost xmlns:android="http://schemas.android.com/apk/res/android"
          android:id="@android:id/tabhost"
          android:layout_width="fill_parent"
-         android:layout_height="fill_parent" >
+         android:layout_height="fill_parent">
 
     <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
         <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
         </TabWidget>
         <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
+                android:layout_height="fill_parent">
             <LinearLayout
                     android:id="@+id/tab1"
                     android:layout_width="fill_parent"
@@ -68,12 +68,12 @@
                 <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/button2OnTab2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="FileSelect"
-                    android:onClick="selectDataFile"/>
+                    <Button
+                            android:id="@+id/button2OnTab2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="FileSelect"
+                            android:onClick="selectDataFile"/>
                     <EditText
                             android:editable="false"
                             android:layout_width="match_parent"
@@ -87,10 +87,13 @@
                 <EditText
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tab2Par1" android:inputType="numberSigned|numberDecimal"/>
+                        android:id="@+id/tab2Par1"
+                        android:hint="X"
+                        android:inputType="numberSigned|numberDecimal"/>
                 <EditText
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:hint="Y"
                         android:id="@+id/tab2Par2" android:inputType="numberSigned|numberDecimal"/>
                 <Button
                         android:id="@+id/buttonOnTab2"
@@ -137,7 +140,7 @@
                         android:id="@+id/button3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Кнопка на третьей вкладке" />
+                        android:text="Кнопка на третьей вкладке"/>
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>

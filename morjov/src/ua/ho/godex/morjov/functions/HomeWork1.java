@@ -75,16 +75,11 @@ public class HomeWork1 {
             if (trio.posX().equals(xMax) && trio.posY().equals(yMax))
                 q22 = trio;
         }
-        System.out.println(q11);
-        System.out.println(q21);
-        System.out.println(q12);
-        System.out.println(q22);
         Trio r1, r2, p;
         Double x2 = xMax, x1 = xMin, y2 = yMax, y1 = yMin, x = inputX,y=inputY;
         r1 = new Trio(inputX, yMin, ((x2 - x) / (x2 - x1)) * q11.value() + ((x - x1) / (x2 - x1)) * q21.value());
         r2 = new Trio(inputX, yMax, ((x2 - x) / (x2 - x1)) * q12.value() + ((x - x1) / (x2 - x1)) * q22.value());
         p = new Trio(inputX, inputY,((y2-y)/(y2-y1))*r1.value()+((y-y1)/(y2-y1))*r2.value());
-        System.out.print(p);
         return p.value();
     }
 }

@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class HomeWork1 {
 
-    static public Double doHomeWork(String input1ValueStr,String input2ValueStr, String variantStr) throws Exception {
-        Double input1Value,input2Value = null;
+    static public Double doHomeWork(String input1ValueStr, String input2ValueStr, String variantStr) throws Exception {
+        Double input1Value, input2Value = null;
         int variant = 0;
         try {
             input1Value = Double.parseDouble(input1ValueStr);
@@ -24,4 +24,6 @@ public class HomeWork1 {
             e.initCause(new Exception("Проверте правильность варианта"));
         }
         final List<Trio> pairList = Variants.getHW1Data(variant);
+        return 2d;
+    }
 }

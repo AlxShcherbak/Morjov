@@ -65,16 +65,39 @@
                     android:orientation="vertical"
                     android:gravity="center_horizontal"
                     >
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/button2OnTab2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FileSelect"
+                    android:onClick="selectDataFile"/>
+                    <EditText
+                            android:editable="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tab2FilePath"
+                            android:inputType="text"
+                            android:enabled="false"
+                            android:text="@string/hwFilePath"
+                            android:hint="Файл с данными"/>
+                </TableRow>
                 <EditText
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/tab2Par1" android:inputType="numberSigned|numberDecimal"/>
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tab2Par2" android:inputType="numberSigned|numberDecimal"/>
                 <Button
                         android:id="@+id/buttonOnTab2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Input"
-                        android:onClick="lab1Calc"/>
+                        android:onClick="HWShowDataFile"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -85,12 +108,17 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/tab2Output" android:layout_gravity="center_horizontal" android:enabled="true" android:editable="false"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="..."
-                        android:id="@+id/tab2Log" android:layout_gravity="center_horizontal"/>
+                <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/scrollView">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="..."
+                            android:id="@+id/tab2Log" android:layout_gravity="center_horizontal" android:textIsSelectable="false"/>
+                </ScrollView>
             </LinearLayout>
             <LinearLayout
                     android:id="@+id/tab3"

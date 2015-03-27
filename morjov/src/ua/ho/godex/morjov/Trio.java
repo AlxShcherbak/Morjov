@@ -5,25 +5,36 @@ package ua.ho.godex.morjov;
  */
 public class Trio {
 
-    private Double key;
-    private Double value1;
-    private Double value2;
+    private Double val;
+    private Double pos1;
+    private Double pos2;
 
-    public Trio(Double aKey, Double aValueX, Double aValueY) {
-        key = aKey;
-        value1 = aValueX;
-        value2 = aValueY;
+    public Trio(Double posX, Double posY, Double aVal) {
+        val = aVal;
+        pos1 = posX;
+        pos2 = posY;
     }
 
-    public Double key() {
-        return key;
+    public Trio(Integer posX, Integer posY, Integer aVal) {
+        val = (double) aVal;
+        pos1 = (double) posX;
+        pos2 = (double) posY;
     }
 
-    public Double valueX() {
-        return value1;
+    public Double value() {
+        return val;
     }
 
-    public Double valueY() {
-        return value1;
+    public Double posX() {
+        return pos1;
+    }
+
+    public Double posY() {
+        return pos2;
+    }
+
+    @Override
+    public String toString() {
+        return "X="+pos1+" Y="+pos2+" val="+val;
     }
 }

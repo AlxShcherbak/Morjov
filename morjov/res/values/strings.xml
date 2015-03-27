@@ -5,4 +5,5 @@
     <string name="text_tab2">HomeWork</string>
     <string name="text_tab3">Lab2</string>
     <string name="text_tab_header">headsss</string>
+    <string name="hwFilePath">/storage/sdcard0/HWdata.txt</string>
 </resources>

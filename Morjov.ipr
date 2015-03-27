@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactManager">
+    <artifact type="apk" name="morjov">
+      <output-path>$PROJECT_DIR$/out/artifacts/morjov</output-path>
+      <properties id="android-properties">
+        <options>
+          <option name="keyStoreUrl" value="file://" />
+          <option name="proGuardCfgFiles">
+            <list>
+              <option value="file://%MODULE_SDK_HOME%/tools/proguard/proguard-android.txt" />
+            </list>
+          </option>
+        </options>
+      </properties>
+      <root id="archive" name="morjov.apk">
+        <element id="android-final-package" facet="morjov/android/Android" />
+      </root>
+    </artifact>
+    <artifact type="jar" name="gadex_test:jar">
+      <output-path>$PROJECT_DIR$/out/artifacts/gadex_test_jar</output-path>
+      <root id="archive" name="gadex_test.jar">
+        <element id="module-output" name="gadex_test" />
+        <element id="module-output" name="morjov" />
+      </root>
+    </artifact>
+  </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions />

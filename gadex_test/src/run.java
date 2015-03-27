@@ -47,13 +47,7 @@ public class run {
     }
     public static void main(String[] args){
         File tmp=new File("HWdata.txt");
-        myPair min=new myPair(15.5d,6000d),max=new myPair(19.2d,8000d);
-        try {
-            //System.out.print(Lab1.doInterpolation(String.valueOf(16.1993d), min, max));
-            HomeWork1.doBilinearInterpolation("1", "1", tmp);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        menu();
         System.out.print("\ntest_end");
     }
 }

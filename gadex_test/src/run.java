@@ -13,7 +13,7 @@ public class run {
     static Scanner inScanner = new Scanner(System.in);
 
     public static void menu() {
-        System.out.print("1)lab1" +
+        System.out.print("\n1)lab1" +
                 "\n2)HW1" +
                 "\n3)Lab2" +
                 "\n0)exit");

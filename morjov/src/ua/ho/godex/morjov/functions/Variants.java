@@ -23,6 +23,14 @@ public class Variants {
         List<myPair> returnHashMap = new ArrayList<>();
         System.out.print(variant);
         switch (variant) {
+            case 6:
+                returnHashMap.add(new myPair(0d, 0.35d));
+                returnHashMap.add(new myPair(5d, 0.05d));
+                returnHashMap.add(new myPair(10d, -0.1d));
+                returnHashMap.add(new myPair(15d, -0.3d));
+                returnHashMap.add(new myPair(20d, -0.25d));
+                returnHashMap.add(new myPair(25d, -0.2d));
+                break;
             case 13:
                 returnHashMap.add(new myPair(0d, 12000d));
                 returnHashMap.add(new myPair(0.125d, 10800d));

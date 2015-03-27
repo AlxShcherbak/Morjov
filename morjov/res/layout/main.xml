@@ -135,12 +135,67 @@
                     android:layout_height="fill_parent"
                     android:orientation="vertical"
                     android:gravity="center_horizontal">
-
-                <Button
-                        android:id="@+id/button3"
-                        android:layout_width="wrap_content"
+                <EditText
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Кнопка на третьей вкладке"/>
+                        android:id="@+id/tab3start"
+                        android:hint="Начало диапазона"
+                        android:inputType="numberSigned|numberDecimal"/>
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tab3end"
+                        android:hint="Конец диапазона"
+                        android:inputType="numberSigned|numberDecimal"/>
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tab3Par3"
+                        android:hint="Погрешность/Количество итерацый"
+                        android:inputType="numberSigned|numberDecimal"/>
+                    <Spinner
+                            android:id="@+id/tab3spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:drawable/btn_dropdown"
+                            android:spinnerMode="dropdown" />
+                    <Button
+                            android:id="@+id/tab3calc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calc"
+                            android:onClick="selectDataFile"/>
+
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tab3Res1"
+                        android:hint="X"
+                        android:inputType="numberSigned|numberDecimal"/>
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tab3Res2"
+                        android:hint="F(x)"
+                        android:inputType="numberSigned|numberDecimal"/>
+
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tab3Res3"
+                        android:hint="Итерацый"
+                        android:inputType="numberSigned|numberDecimal"/>
+                <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/tab3scrollView">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="..."
+                            android:id="@+id/tab3Log" android:layout_gravity="center_horizontal" android:textIsSelectable="false"/>
+                </ScrollView>
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>

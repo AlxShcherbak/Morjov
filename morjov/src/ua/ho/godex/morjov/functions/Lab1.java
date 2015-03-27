@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by godex on 24.03.2015.
+ * Created by godex
+ * on  24.03.2015.19:51
+ * for Morjov
  */
 public class Lab1 {
     List<myPair> pairList;

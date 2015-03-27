@@ -19,7 +19,7 @@
     </artifact>
     <artifact type="jar" name="gadex_test:jar">
       <output-path>$PROJECT_DIR$/out/artifacts/gadex_test_jar</output-path>
-      <root id="archive" name="gadex_test.jar">
+      <root id="archive" name="gadex_test_jar.jar">
         <element id="module-output" name="gadex_test" />
         <element id="module-output" name="morjov" />
       </root>

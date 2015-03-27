@@ -16,6 +16,12 @@ import ua.ho.godex.morjov.functions.Variants;
 
 import java.io.File;
 
+/**
+ * Created by godex
+ * on  24.03.2015.19:50
+ * for Morjov
+ */
+
 public class Morjov extends Activity {
     EditText tab1Var;
     EditText tab1Par1;

@@ -6,8 +6,8 @@ import java.io.File;
 import java.util.Scanner;
 
 /**
- * Created by godex_000
- * on 27.03.2015.
+ * Created by godex
+ * on  24.03.2015.19:50
  * for Morjov
  */
 public class run {

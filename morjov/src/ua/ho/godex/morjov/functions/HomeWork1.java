@@ -6,7 +6,9 @@ import java.io.File;
 import java.util.List;
 
 /**
- * Created by godex on 24.03.2015.
+ * Created by godex
+ * on  24.03.2015.19:50
+ * for Morjov
  */
 public class HomeWork1 {
     static public Double doBilinearInterpolation(String input1ValueStr, String input2ValueStr, String variantStr) throws Exception {

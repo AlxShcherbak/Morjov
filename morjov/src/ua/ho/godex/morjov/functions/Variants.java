@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Created by godex on 24.03.2015.
+ * Created by godex
+ * on  24.03.2015.19:50
+ * for Morjov
  */
 public class Variants {
     /**

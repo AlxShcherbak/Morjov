@@ -17,7 +17,8 @@ public class run {
         System.out.print("\n1)lab1" +
                 "\n2)HW1" +
                 "\n3)Lab2" +
-                "\n0)exit");
+                "\n0)exit" +
+                "\n");
         switch (inScanner.nextInt()) {
             case 1:
                 lab1start();

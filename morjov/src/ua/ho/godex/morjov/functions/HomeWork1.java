@@ -12,6 +12,16 @@ import java.util.List;
  * for Morjov
  */
 public class HomeWork1 {
+    /**
+     * Сделать билинейною интерполяцыю
+     * с предварительной конвертировкой строки в числа
+     *
+     * @param input1ValueStr строка с Х
+     * @param input2ValueStr строка с У
+     * @param variantStr     Номер варианта
+     * @return
+     * @throws Exception
+     */
     static public Double doBilinearInterpolation(String input1ValueStr, String input2ValueStr, String variantStr) throws Exception {
         Double input1Value, input2Value = null;
         int variant = 0;
@@ -31,6 +41,16 @@ public class HomeWork1 {
         return 2d;
     }
 
+    /**
+     * Сделать биленейную интерполяцыю
+     * с использованием файла с точками
+     *
+     * @param inputXStr   Строка с значением Х
+     * @param inputYStr   Строка с значением У
+     * @param variantFile файл с вариантом
+     * @return рузультат интерполяцыи
+     * @throws Exception ошыбки почему не удалось выполнить интерполяцыю
+     */
     static public Double doBilinearInterpolation(String inputXStr, String inputYStr, File variantFile) throws Exception {
         Double inputX = null, inputY = null;
         int variant = 0;
@@ -53,7 +73,7 @@ public class HomeWork1 {
         if (inputY < pairList.get(0).posY() || inputY > pairList.get(pairList.size() - 1).posY()) {
             throw new Exception("Y вне диапазона");
         }
-        //X=Xto4 & Y=Yto4
+        //X=Xto4 & Y=Yto4 проверка не являються ли указаные кординаты кординатами точки
         for (Trio trio : pairList) {
             if (trio.posX().equals(inputX) && trio.posY().equals(inputY))
                 return trio.value();
@@ -63,9 +83,7 @@ public class HomeWork1 {
         Trio q11 = null, q12 = null, q21 = null, q22 = null;
         //find yMin yMax
         for (int pos = 0; pos < pairList.size() - 1; pos++) {
-
-            //X=Xto4
-            if (pairList.get(pos).posX().equals(inputX) || inputX.equals(pairList.get(pos + 1).posX())) {
+            if (pairList.get(pos).posX().equals(inputX) || inputX.equals(pairList.get(pos + 1).posX())) {//X=Xto4 проверка не лежит ли значение Х на грани
                 if (pairList.get(pos).posX().equals(inputX)) {
                     xMin = pairList.get(pos).posX();
                     xMax = pairList.get(pos).posX();
@@ -79,7 +97,7 @@ public class HomeWork1 {
                     xMax = pairList.get(pos + 1).posX();
                 }
             }
-            if (pairList.get(pos).posY().equals(inputY) || pairList.get(pos + 1).posY().equals(inputY)) {
+            if (pairList.get(pos).posY().equals(inputY) || pairList.get(pos + 1).posY().equals(inputY)) {//Y=Yto4 проверка не лежит ли значение Y на грани
                 if (pairList.get(pos).posY().equals(inputY)) {
                     yMin = pairList.get(pos).posY();
                     yMax = pairList.get(pos).posY();
@@ -94,9 +112,7 @@ public class HomeWork1 {
                 }
             }
         }
-
-        //TODO не работает пересечение
-        //Выбрать точки
+        //Выбрать точки с матрицы
         for (Trio trio : pairList) {
             if (trio.posX().equals(xMin) && trio.posY().equals(yMin))
                 q11 = trio;
@@ -107,11 +123,11 @@ public class HomeWork1 {
             if (trio.posX().equals(xMax) && trio.posY().equals(yMax))
                 q22 = trio;
         }
-        //X=Xto4
+        //X=Xto4 если на грани Х
         if (inputX.equals(xMin) || inputX.equals(xMax)) {
-                return Lab1.doInterpolation(inputY, new myPair(q11.posY(), q11.value()), new myPair(q12.posY(), q12.value()));
+            return Lab1.doInterpolation(inputY, new myPair(q11.posY(), q11.value()), new myPair(q12.posY(), q12.value()));
         }
-        //Y=Yto4
+        //Y=Yto4 если на грани У
         if (inputY.equals(yMin) || inputY.equals(yMin)) {
             return Lab1.doInterpolation(inputX, new myPair(q11.posX(), q11.value()), new myPair(q21.posX(), q21.value()));
         }

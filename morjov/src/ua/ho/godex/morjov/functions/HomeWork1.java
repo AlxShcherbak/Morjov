@@ -1,6 +1,7 @@
 package ua.ho.godex.morjov.functions;
 
 import ua.ho.godex.morjov.Trio;
+import ua.ho.godex.morjov.myPair;
 
 import java.io.File;
 import java.util.List;
@@ -52,36 +53,46 @@ public class HomeWork1 {
         if (inputY < pairList.get(0).posY() || inputY > pairList.get(pairList.size() - 1).posY()) {
             throw new Exception("Y вне диапазона");
         }
-        //нахождения диапазона где точка проверка диапазона
-        Double yMin = null, yMax = null, xMin = null, xMax = null;
-        Trio q11 = null, q12 = null, q21 = null, q22 = null;
-        //find yMin yMax
-        for (int pos = 0; pos < pairList.size() - 1; pos++) {
-            if (pairList.get(pos).posY() < inputY && inputY < pairList.get(pos + 1).posY()) {
-                yMin = pairList.get(pos).posY();
-                yMax = pairList.get(pos + 1).posY();
-            }
-            if (pairList.get(pos).posX() < inputX && inputX < pairList.get(pos + 1).posX()) {
-                xMin = pairList.get(pos).posX();
-                xMax = pairList.get(pos + 1).posX();
-            }
-        }
         //X=Xto4 & Y=Yto4
         for (Trio trio : pairList) {
             if (trio.posX().equals(inputX) && trio.posY().equals(inputY))
                 return trio.value();
         }
-        //X=Xto4
-        if(inputX.equals(xMin)||inputX.equals(xMax)){
-            if(inputX.equals(xMin)){
+        //нахождения диапазона где точка проверка диапазона
+        Double yMin = null, yMax = null, xMin = null, xMax = null;
+        Trio q11 = null, q12 = null, q21 = null, q22 = null;
+        //find yMin yMax
+        for (int pos = 0; pos < pairList.size() - 1; pos++) {
 
-            }else{
-
+            //X=Xto4
+            if (pairList.get(pos).posX().equals(inputX) || inputX.equals(pairList.get(pos + 1).posX())) {
+                if (pairList.get(pos).posX().equals(inputX)) {
+                    xMin = pairList.get(pos).posX();
+                    xMax = pairList.get(pos).posX();
+                } else {
+                    xMin = pairList.get(pos + 1).posX();
+                    xMax = pairList.get(pos + 1).posX();
+                }
+            } else {
+                if (pairList.get(pos).posX() < inputX && inputX < pairList.get(pos + 1).posX()) {
+                    xMin = pairList.get(pos).posX();
+                    xMax = pairList.get(pos + 1).posX();
+                }
             }
-        }
-        //Y=Yto4
-        if(inputY.equals(yMin)||inputY.equals(yMin)){
-
+            if (pairList.get(pos).posY().equals(inputY) || pairList.get(pos + 1).posY().equals(inputY)) {
+                if (pairList.get(pos).posY().equals(inputY)) {
+                    yMin = pairList.get(pos).posY();
+                    yMax = pairList.get(pos).posY();
+                } else {
+                    yMin = pairList.get(pos + 1).posY();
+                    yMax = pairList.get(pos + 1).posY();
+                }
+            } else {
+                if (pairList.get(pos).posY() < inputY && inputY < pairList.get(pos + 1).posY()) {
+                    yMin = pairList.get(pos).posY();
+                    yMax = pairList.get(pos + 1).posY();
+                }
+            }
         }
 
         //TODO не работает пересечение
@@ -96,11 +107,25 @@ public class HomeWork1 {
             if (trio.posX().equals(xMax) && trio.posY().equals(yMax))
                 q22 = trio;
         }
+        /*
+        //X=Xto4
+        if (inputX.equals(xMin) || inputX.equals(xMax)) {
+            if (inputX.equals(xMin)) {
+                return Lab1.doInterpolation(inputX, new myPair(q11.posX(), q11.value()), new myPair(q12.posX(), q12.value()));
+            } else {
+                return Lab1.doInterpolation(inputX, new myPair(q21.posX(), q21.value()), new myPair(q22.posX(), q22.value()));
+            }
+        }
+        //Y=Yto4
+        if (inputY.equals(yMin) || inputY.equals(yMin)) {
+
+        }
+        /**/
         Trio r1, r2, p;
-        Double x2 = xMax, x1 = xMin, y2 = yMax, y1 = yMin, x = inputX,y=inputY;
+        Double x2 = xMax, x1 = xMin, y2 = yMax, y1 = yMin, x = inputX, y = inputY;
         r1 = new Trio(inputX, yMin, ((x2 - x) / (x2 - x1)) * q11.value() + ((x - x1) / (x2 - x1)) * q21.value());
         r2 = new Trio(inputX, yMax, ((x2 - x) / (x2 - x1)) * q12.value() + ((x - x1) / (x2 - x1)) * q22.value());
-        p = new Trio(inputX, inputY,((y2-y)/(y2-y1))*r1.value()+((y-y1)/(y2-y1))*r2.value());
+        p = new Trio(inputX, inputY, ((y2 - y) / (y2 - y1)) * r1.value() + ((y - y1) / (y2 - y1)) * r2.value());
         return p.value();
     }
 }

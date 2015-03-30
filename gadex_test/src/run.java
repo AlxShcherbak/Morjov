@@ -1,3 +1,4 @@
+import ua.ho.godex.morjov.functions.HomeWork1;
 import ua.ho.godex.morjov.functions.Lab1;
 
 import java.io.File;
@@ -54,7 +55,16 @@ public class run {
     }
 
     public static void HW1start() {
-
+        String tmp,xStr,yStr;
+        System.out.print("X->");
+        xStr = inScanner.next();
+        System.out.print("Y->");
+        yStr = inScanner.next();
+        try {
+            System.out.print("Ansver=" + HomeWork1.doBilinearInterpolation(xStr, yStr, new File("HWdata.txt")).toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void lab2start() {

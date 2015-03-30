@@ -80,7 +80,7 @@ public class Lab1 {
     static public Double doInterpolation(Double inputValueStr, myPair min,myPair max) throws Exception {
         Double x0,x1,x2,y0,y2;
         x0=min.key();
-        x1= inputValueStr;
+        x1=inputValueStr;
         x2=max.key();
         y0=min.value();
         y2=max.value();

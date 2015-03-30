@@ -107,18 +107,13 @@ public class HomeWork1 {
             if (trio.posX().equals(xMax) && trio.posY().equals(yMax))
                 q22 = trio;
         }
-        /*
         //X=Xto4
         if (inputX.equals(xMin) || inputX.equals(xMax)) {
-            if (inputX.equals(xMin)) {
-                return Lab1.doInterpolation(inputX, new myPair(q11.posX(), q11.value()), new myPair(q12.posX(), q12.value()));
-            } else {
-                return Lab1.doInterpolation(inputX, new myPair(q21.posX(), q21.value()), new myPair(q22.posX(), q22.value()));
-            }
+                return Lab1.doInterpolation(inputY, new myPair(q11.posY(), q11.value()), new myPair(q12.posY(), q12.value()));
         }
         //Y=Yto4
         if (inputY.equals(yMin) || inputY.equals(yMin)) {
-
+            return Lab1.doInterpolation(inputX, new myPair(q11.posX(), q11.value()), new myPair(q21.posX(), q21.value()));
         }
         /**/
         Trio r1, r2, p;

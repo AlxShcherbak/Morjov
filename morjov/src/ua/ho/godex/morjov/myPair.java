@@ -19,5 +19,10 @@ public class myPair {
         public Double value() {
             return value;
         }
+
+    @Override
+    public String toString() {
+        return new String("Key="+key+" Val="+value);
     }
+}
 

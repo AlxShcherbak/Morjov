@@ -69,7 +69,6 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/morjov" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/morjov/src/ua/ho/godex/morjov/functions/Lab1Func.java" charset="windows-31j" />
-    <file url="file://$PROJECT_DIR$/morjov/src/ua/ho/godex/morjov/functions/Lab2Func.java" charset="windows-31j" />
     <file url="file://$PROJECT_DIR$/morjov/src/ua/ho/godex/morjov/functions/Lab2Func.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/morjov/src/ua/ho/godex/morjov/functions/Lab2XFxIteration.java" charset="windows-31j" />
     <file url="file://$PROJECT_DIR$/morjov/src/ua/ho/godex/morjov/functions/VariantSet.java" charset="windows-31j" />

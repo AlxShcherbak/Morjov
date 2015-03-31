@@ -33,8 +33,8 @@ public class Lab2XFxIteration {
     @Override
     public String toString() {
         return "Lab2XFxIteration{" +
-                "x=" + x +
-                ", fX=" + fX +
+                "X=" + x +
+                ", F(x)=" + fX +
                 ", iteration=" + iteration +
                 '}';
     }

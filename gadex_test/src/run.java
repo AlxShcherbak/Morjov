@@ -1,5 +1,7 @@
 import ua.ho.godex.morjov.functions.HomeWork1;
 import ua.ho.godex.morjov.functions.Lab1;
+import ua.ho.godex.morjov.functions.Lab2Func;
+import ua.ho.godex.morjov.functions.Lab2XFxIteration;
 
 import java.io.File;
 import java.util.Scanner;
@@ -69,7 +71,38 @@ public class run {
     }
 
     public static void lab2start() {
-
+        Double start, end, par3;
+        Integer method;
+        String tmp;
+        System.out.print("Start->");
+        tmp = inScanner.next();
+        start = Double.valueOf(tmp);
+        System.out.print("End->");
+        tmp = inScanner.next();
+        end = Double.valueOf(tmp);
+        System.out.print("method 1)gold  2)Fibona4i->");
+        tmp = inScanner.next();
+        method = Integer.valueOf(tmp);
+        try {
+        switch (method){
+            case 1:
+                System.out.print("Погрешность->");
+                tmp = inScanner.next();
+                par3 = Double.valueOf(tmp);
+                System.out.print("Ansver=" + new Lab2Func().goldenCut(start, end, par3));
+                break;
+            case 2:
+                System.out.print("Iteration->");
+                tmp = inScanner.next();
+                par3 = Double.valueOf(tmp);
+                System.out.print("Ansver=" + new Lab2Func().fibonacci(start,end,par3));
+                break;
+            default:
+                menu();
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {

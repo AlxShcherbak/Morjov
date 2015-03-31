@@ -15,24 +15,24 @@ public class Lab2Func {
     /**
      * Нахождение экстремума по методу Фибоначчи
      *
-     * @param inputValue1    - начало отрезка для нахождения экстремума
-     * @param inputValue2    - конец отрезка для нахождения экстремума
-     * @param inputValue3    - количество проводимых итераций
+     * @param start    - начало отрезка для нахождения экстремума
+     * @param end    - конец отрезка для нахождения экстремума
+     * @param iteration    - количество проводимых итераций
      * @return - результат точка экстремума, значение функции и количиство итераций
      */
-    public Lab2XFxIteration fibonacci(Double inputValue1, Double inputValue2, Double inputValue3) {
+    public Lab2XFxIteration fibonacci(Double start, Double end, Double iteration) {
         new VariantSet().setEnterArrayListsVariant19(this.parameterList, this.resultList);
-        if (!this.fibonacciList.isEmpty() | (this.fibonacciList.size() < inputValue3)) {
-            fibonacciNumbers(inputValue3.longValue());
+        if (!this.fibonacciList.isEmpty() | (this.fibonacciList.size() < iteration)) {
+            fibonacciNumbers(iteration.longValue());
         }
 
-        double x1, x2, a = inputValue1,
-                b = inputValue2;
-        int iterator = inputValue3.intValue();
+        double x1, x2, a = start,
+                b = end;
+        int iterator = iteration.intValue();
         x1 = a + (b - a) * fibonacciList.get(iterator - 3) /
                 fibonacciList.get(iterator - 1);
-        x2 = a + (b - a) * fibonacciList.get((int) (inputValue3.longValue() - 2)) /
-                fibonacciList.get((int) (inputValue3.longValue() - 1));
+        x2 = a + (b - a) * fibonacciList.get((int) (iteration.longValue() - 2)) /
+                fibonacciList.get((int) (iteration.longValue() - 1));
 
 
         return fibonacciRecursive(a, b, x1, x2, iterator);
@@ -68,34 +68,34 @@ public class Lab2Func {
     /**
      * Нахождение экстремума по методу золотого сечения
      *
-     * @param inputValue1    - начало отрезка для нахождения экстремума
-     * @param inputValue2    - конец отрезка для нахождения экстремума
-     * @param inputValue3    - погрешность при нахождении экстремума
+     * @param start    - начало отрезка для нахождения экстремума
+     * @param end    - конец отрезка для нахождения экстремума
+     * @param deviation    - погрешность при нахождении экстремума
      * @return - результат точка экстремума, значение функции и количиство итераций
      */
-    public Lab2XFxIteration goldenCut(Double inputValue1, Double inputValue2, Double inputValue3) {
+    public Lab2XFxIteration goldenCut(Double start, Double end, Double deviation) {
         new VariantSet().setEnterArrayListsVariant19(this.parameterList, this.resultList);
         Lab2XFxIteration goldenCutReturn;
         double x1, x2;
 
-        x1 = inputValue2 - (inputValue2 - inputValue1) / goldenCut;
-        x2 = inputValue1 + (inputValue2 - inputValue1) / goldenCut;
+        x1 = end - (end - start) / goldenCut;
+        x2 = start + (end - start) / goldenCut;
 
 
         if ((new Lab1Func().doInterpolationEnterValues(x1)) >=
                 (new Lab1Func().doInterpolationEnterValues(x2))) {
-            if (inputValue3 > Math.abs(inputValue2 - x1)) {
-                goldenCutReturn = new Lab2XFxIteration((x1 + inputValue2) / 2,
-                        new Lab1Func().doInterpolationEnterValues((x1 + inputValue2) / 2));
+            if (deviation > Math.abs(end - x1)) {
+                goldenCutReturn = new Lab2XFxIteration((x1 + end) / 2,
+                        new Lab1Func().doInterpolationEnterValues((x1 + end) / 2));
             } else {
-                goldenCutReturn = goldenCut(x1, inputValue2, inputValue3);
+                goldenCutReturn = goldenCut(x1, end, deviation);
             }
         } else {
-            if (inputValue3 > Math.abs(x2 - inputValue1)) {
-                goldenCutReturn = new Lab2XFxIteration((inputValue1 + x2) / 2,
-                        new Lab1Func().doInterpolationEnterValues((inputValue1 + x2) / 2));
+            if (deviation > Math.abs(x2 - start)) {
+                goldenCutReturn = new Lab2XFxIteration((start + x2) / 2,
+                        new Lab1Func().doInterpolationEnterValues((start + x2) / 2));
             } else {
-                goldenCutReturn = goldenCut(inputValue1, x2, inputValue3);
+                goldenCutReturn = goldenCut(start, x2, deviation);
             }
         }
         goldenCutReturn.incrementIterator();

@@ -11,6 +11,7 @@ import ua.ho.godex.morjov.functions.HomeWork1;
 import ua.ho.godex.morjov.functions.Lab1;
 import ua.ho.godex.morjov.functions.Lab2Func;
 import ua.ho.godex.morjov.functions.Variants;
+import ua.ho.godex.morjov.functions.classes.Lab2XFxIteration;
 
 import java.io.File;
 
@@ -41,6 +42,9 @@ public class Morjov extends Activity {
     TextView tab3Log;
 
 
+    Spinner dropdown;
+
+
     /**
      * Called when the activity is first created.
      */
@@ -65,18 +69,18 @@ public class Morjov extends Activity {
         tab2FilePath = (EditText) findViewById(R.id.tab2FilePath);
 
 
-         tab3start=(EditText) findViewById(R.id.tab3start);
-         tab3end=(EditText) findViewById(R.id.tab3end);
+        tab3start = (EditText) findViewById(R.id.tab3start);
+        tab3end = (EditText) findViewById(R.id.tab3end);
 
-        tab3Par3=(EditText) findViewById(R.id.tab3Par3);
-         tab3spinner1= (Spinner) findViewById(R.id.tab3spinner1);
-         tab3Res1=(EditText) findViewById(R.id.tab3Res1);
-         tab3Res2=(EditText) findViewById(R.id.tab3Res2);
-         tab3Res3=(EditText) findViewById(R.id.tab3Res3);
+        tab3Par3 = (EditText) findViewById(R.id.tab3Par3);
+        tab3spinner1 = (Spinner) findViewById(R.id.tab3spinner1);
+        tab3Res1 = (EditText) findViewById(R.id.tab3Res1);
+        tab3Res2 = (EditText) findViewById(R.id.tab3Res2);
+        tab3Res3 = (EditText) findViewById(R.id.tab3Res3);
 
+        tab3Log = (TextView) findViewById(R.id.tab3Log);
 
-
-        Spinner dropdown = (Spinner)findViewById(R.id.tab3spinner1);
+        dropdown = (Spinner) findViewById(R.id.tab3spinner1);
         String[] items = new String[]{"Golden", "Fibonachi"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
         dropdown.setAdapter(adapter);
@@ -109,8 +113,8 @@ public class Morjov extends Activity {
             tab1Output.setText(Lab1.doInterpolation(tab1Par1.getText().toString(), tab1Var.getText().toString()).toString());
             tab1Log.setText("...");
         } catch (Exception e) {
-            for(StackTraceElement stackTraceElement:e.getStackTrace())
-                tab1Log.setText(tab1Log.getText()+"\n"+stackTraceElement.toString());
+            for (StackTraceElement stackTraceElement : e.getStackTrace())
+                tab1Log.setText(tab1Log.getText() + "\n" + stackTraceElement.toString());
             tab1Output.setText("");
         }
     }
@@ -120,21 +124,36 @@ public class Morjov extends Activity {
             tab2Output.setText(HomeWork1.doBilinearInterpolation(tab2Par1.getText().toString(), tab2Par2.getText().toString(), new File(tab2FilePath.getText().toString())).toString());
             tab2Log.setText("...");
         } catch (Exception e) {
-            for(StackTraceElement stackTraceElement:e.getStackTrace())
-            tab2Log.setText(tab2Log.getText()+"\n"+stackTraceElement.toString());
+            for (StackTraceElement stackTraceElement : e.getStackTrace())
+                tab2Log.setText(tab2Log.getText() + "\n" + stackTraceElement.toString());
             tab2Output.setText("");
         }
     }
 
-    public void lab2Calc(View view){
+    public void lab2Calc(View view) {
+        Lab2XFxIteration lab2XFxIteration = null;
         try {
-            new Lab2Func().fibonacci(Double.parseDouble(tab3start.getText().toString()),Double.parseDouble(tab3end.getText().toString()), Double.parseDouble(tab3Par3.getText().toString()));
+            switch (
+                    dropdown.getSelectedItemPosition()) {
+                case 0:
+                    lab2XFxIteration = new Lab2Func().goldenCut(Double.parseDouble(tab3start.getText().toString()), Double.parseDouble(tab3end.getText().toString()), Double.parseDouble(tab3Par3.getText().toString()));
+                    break;
+                case 1:
+                    lab2XFxIteration = new Lab2Func().fibonacci(Double.parseDouble(tab3start.getText().toString()), Double.parseDouble(tab3end.getText().toString()), Double.parseDouble(tab3Par3.getText().toString()));
+                    break;
+                default:
+                    break;
+            }
             tab3Log.setText("...");
+            tab3Res1.setText(String.valueOf(lab2XFxIteration.getX()));
+            tab3Res2.setText(String.valueOf(lab2XFxIteration.getfX()));
+            tab3Res3.setText(String.valueOf(lab2XFxIteration.getIteration()));
         } catch (Exception e) {
-            for(StackTraceElement stackTraceElement:e.getStackTrace())
-                tab3Log.setText(tab3Log.getText()+"\n"+stackTraceElement.toString());
+            for (StackTraceElement stackTraceElement : e.getStackTrace())
+                tab3Log.setText(tab3Log.getText() + "\n" + stackTraceElement.toString());
             tab3Res1.setText("");
         }
+
     }
 
     public void HWShowDataFile(View view) {

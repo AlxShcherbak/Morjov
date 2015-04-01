@@ -1,5 +1,7 @@
 package ua.ho.godex.morjov.functions;
 
+import ua.ho.godex.morjov.functions.classes.Lab2XFxIteration;
+
 import java.util.ArrayList;
 import java.util.List;
 

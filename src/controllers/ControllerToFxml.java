@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
+import ua.ho.godex.morjov.functions.MyUtils;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -57,7 +58,7 @@ public class ControllerToFxml implements Initializable {
         if (!inputTextField.getText().isEmpty()) {
             String inputValueString = inputTextField.getText();
             try {
-                double inputValueDouble = Utils.strToDouble(inputValueString);
+                double inputValueDouble = MyUtils.strToDouble(inputValueString);
                 Double resultInterpolation = new Lab1Func().doInterpolationEnterValues(inputValueDouble, outputTextField);
                 if (resultInterpolation != null) {
                     outputTextField.setText(String.valueOf(resultInterpolation));
@@ -78,8 +79,8 @@ public class ControllerToFxml implements Initializable {
             String inputValueString1 = inputTextField1HW.getText();
             String inputValueString2 = inputTextField2HW.getText();
             try {
-                Double resultInterpolation = new HomeWorkFirstRealization().doInterpolationEnterValues(Utils.strToDouble(inputValueString1),
-                        Utils.strToDouble(inputValueString2), outputTextFieldHW);
+                Double resultInterpolation = new HomeWorkFirstRealization().doInterpolationEnterValues(MyUtils.strToDouble(inputValueString1),
+                        MyUtils.strToDouble(inputValueString2), outputTextFieldHW);
                 if (resultInterpolation != null) {
                     outputTextFieldHW.setText(String.valueOf(resultInterpolation));
                 }
@@ -106,11 +107,11 @@ public class ControllerToFxml implements Initializable {
                 Lab2XFxIteration resultValue = null;
                 try {
                     if (choiceBoxLab2.getSelectionModel().getSelectedItem().toString().equals("Золотое сечение")) {
-                        resultValue = new Lab2Func().goldenCut(Utils.strToDouble(inputValueString1),
-                                Utils.strToDouble(inputValueString2), Utils.strToDouble(inputValueString3), outputLab2ErrorLog);
+                        resultValue = new Lab2Func().goldenCut(MyUtils.strToDouble(inputValueString1),
+                                MyUtils.strToDouble(inputValueString2), MyUtils.strToDouble(inputValueString3), outputLab2ErrorLog);
                     } else if (choiceBoxLab2.getSelectionModel().getSelectedItem().toString().equals("Фибоначчи")) {
-                        resultValue = new Lab2Func().fibonacci(Utils.strToDouble(inputValueString1),
-                                Utils.strToDouble(inputValueString2), Utils.strToDouble(inputValueString3), outputLab2ErrorLog);
+                        resultValue = new Lab2Func().fibonacci(MyUtils.strToDouble(inputValueString1),
+                                MyUtils.strToDouble(inputValueString2), MyUtils.strToDouble(inputValueString3), outputLab2ErrorLog);
                     }
                     System.out.println(resultValue);
                     assert resultValue != null;

@@ -23,7 +23,7 @@ public class Lab2Func {
      * @return - результат точка экстремума, значение функции и количиство итераций
      */
     public Lab2XFxIteration fibonacci(Double start, Double end, Double iteration) {
-        new VariantSet().setEnterArrayListsVariant6(this.parameterList, this.resultList);
+        new VariantSet().setEnterArrayListsVariant13(this.parameterList, this.resultList);
         if (!this.fibonacciList.isEmpty() | (this.fibonacciList.size() < iteration)) {
             fibonacciNumbers(iteration.longValue());
         }
@@ -76,7 +76,7 @@ public class Lab2Func {
      * @return - результат точка экстремума, значение функции и количиство итераций
      */
     public Lab2XFxIteration goldenCut(Double start, Double end, Double deviation) {
-        new VariantSet().setEnterArrayListsVariant6(this.parameterList, this.resultList);
+        new VariantSet().setEnterArrayListsVariant13(this.parameterList, this.resultList);
         Lab2XFxIteration goldenCutReturn;
         double x1, x2;
 

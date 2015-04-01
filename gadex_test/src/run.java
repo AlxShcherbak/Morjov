@@ -1,7 +1,6 @@
 import ua.ho.godex.morjov.functions.HomeWork1;
 import ua.ho.godex.morjov.functions.Lab1;
 import ua.ho.godex.morjov.functions.Lab2Func;
-import ua.ho.godex.morjov.functions.Lab2XFxIteration;
 
 import java.io.File;
 import java.util.Scanner;

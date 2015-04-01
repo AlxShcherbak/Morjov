@@ -100,10 +100,9 @@ public class Variants {
         if (!inScanner.hasNext())
             throw new Exception("Файл пуст");
         for (String str : inScanner.nextLine().split(cutChar)) {            //считать строку столбцов
-            str=str.replace(',','.');//замена комы
             if (str.isEmpty())
                 continue;
-            xString.add(Double.parseDouble(str));            //нарезать строку столбцов
+            xString.add(MyUtils.strToDouble(str));            //нарезать строку столбцов
         }
         int posX = 0;
         Double parY;
@@ -113,9 +112,9 @@ public class Variants {
                 tmp.add(str);
             }
             posX=0;
-            parY = Double.parseDouble(tmp.remove(0));
+            parY = MyUtils.strToDouble(tmp.remove(0));
             for (String str : tmp) {//розбираем строку
-                returnHashMap.add(new Trio(xString.get(posX), parY, Double.parseDouble(str)));
+                returnHashMap.add(new Trio(xString.get(posX), parY, MyUtils.strToDouble(str)));
                 posX++;
             }
         }

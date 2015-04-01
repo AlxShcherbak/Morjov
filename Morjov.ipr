@@ -24,13 +24,6 @@
         <element id="module-output" name="morjov" />
       </root>
     </artifact>
-    <artifact type="jar" name="unnamed">
-      <output-path>$PROJECT_DIR$/out/artifacts/unnamed</output-path>
-      <root id="archive" name="unnamed.jar">
-        <element id="module-output" name="gadex_test" />
-        <element id="module-output" name="morjov" />
-      </root>
-    </artifact>
   </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
@@ -70,7 +63,6 @@
     <file url="file://$PROJECT_DIR$/morjov" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/morjov/src/ua/ho/godex/morjov/functions/Lab1Func.java" charset="windows-31j" />
     <file url="file://$PROJECT_DIR$/morjov/src/ua/ho/godex/morjov/functions/Lab2Func.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/morjov/src/ua/ho/godex/morjov/functions/Lab2XFxIteration.java" charset="windows-31j" />
     <file url="file://$PROJECT_DIR$/morjov/src/ua/ho/godex/morjov/functions/VariantSet.java" charset="windows-31j" />
     <file url="file://$PROJECT_DIR$/morjov/src/ua/ho/godex/morjov/functions/classes/HomeWorkFirstClass.java" charset="windows-31j" />
     <file url="file://$PROJECT_DIR$/morjov/src/ua/ho/godex/morjov/functions/classes/Lab2XFxIteration.java" charset="windows-31j" />

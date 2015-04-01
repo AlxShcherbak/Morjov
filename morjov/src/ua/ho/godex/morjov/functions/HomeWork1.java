@@ -12,22 +12,26 @@ import java.util.List;
  * for Morjov
  */
 public class HomeWork1 {
+    private final static boolean debug=true;//Выводить доп инфо
     /**
      * Сделать билинейною интерполяцыю
      * с предварительной конвертировкой строки в числа
+     * вариант береться с
      *
      * @param input1ValueStr строка с Х
      * @param input2ValueStr строка с У
      * @param variantStr     Номер варианта
-     * @return
-     * @throws Exception
+     * @return рузультат интерполяцыи
+     * @throws Exception ошыбки почему не удалось выполнить интерполяцыю
+     * @see Variants тут даные для вариантов
      */
+    @Deprecated
     static public Double doBilinearInterpolation(String input1ValueStr, String input2ValueStr, String variantStr) throws Exception {
-        Double input1Value, input2Value = null;
+        Double input1Value = null, input2Value = null;
         int variant = 0;
         try {
-            input1Value = Double.parseDouble(input1ValueStr);
-            input2Value = Double.parseDouble(input2ValueStr);
+            input1Value = MyUtils.strToDouble(input1ValueStr);
+            input2Value = MyUtils.strToDouble(input2ValueStr);
         } catch (Exception e) {
             e.initCause(new Exception("Проверте правильность чисел"));
         }
@@ -37,8 +41,7 @@ public class HomeWork1 {
             e.initCause(new Exception("Проверте правильность варианта"));
         }
         final List<Trio> pairList = Variants.getHW1Data(variant);
-
-        return 2d;
+        return doBilinearInterpolation(input1Value, input2Value, pairList);
     }
 
     /**
@@ -53,10 +56,12 @@ public class HomeWork1 {
      */
     static public Double doBilinearInterpolation(String inputXStr, String inputYStr, File variantFile) throws Exception {
         Double inputX = null, inputY = null;
+        inputXStr = inputXStr.replace(",", ".");
+        inputYStr = inputYStr.replace(",", ".");
         int variant = 0;
         try {
-            inputX = Double.parseDouble(inputXStr);
-            inputY = Double.parseDouble(inputYStr);
+            inputX = MyUtils.strToDouble(inputXStr);
+            inputY = MyUtils.strToDouble(inputYStr);
         } catch (Exception e) {
             e.initCause(new Exception("Проверте правильность чисел"));
         }
@@ -66,6 +71,19 @@ public class HomeWork1 {
         } catch (Exception e) {
             e.initCause(new Exception("Проверте правильность пути к фалу"));
         }
+        return doBilinearInterpolation(inputX, inputY, pairList);
+    }
+
+    /**
+     * Сделать биленейную интерполяцыю
+     *
+     * @param inputX   Значение Х
+     * @param inputY   Значение У
+     * @param pairList Масив точок и их значений
+     * @return рузультат интерполяцыи
+     * @throws Exception ошыбки почему не удалось выполнить интерполяцыю
+     */
+    private static Double doBilinearInterpolation(Double inputX, Double inputY, List<Trio> pairList) throws Exception {
         //проверка диапазона
         if (inputX < pairList.get(0).posX() || inputX > pairList.get(pairList.size() - 1).posX()) {
             throw new Exception("X вне диапазона");
@@ -135,8 +153,17 @@ public class HomeWork1 {
         Trio r1, r2, p;
         Double x2 = xMax, x1 = xMin, y2 = yMax, y1 = yMin, x = inputX, y = inputY;
         r1 = new Trio(inputX, yMin, ((x2 - x) / (x2 - x1)) * q11.value() + ((x - x1) / (x2 - x1)) * q21.value());
+        if(debug){
+            System.out.println("(("+x2+ "-"+ x+")/("+x2+ "-" +x1+"))*"+q11.value()+ "+(("+x +"-"+ x1+")/("+x2+ "-" +x1+"))*"+q21.value()+"="+r1.value());
+        }
         r2 = new Trio(inputX, yMax, ((x2 - x) / (x2 - x1)) * q12.value() + ((x - x1) / (x2 - x1)) * q22.value());
+        if(debug){
+            System.out.println("(("+x2+ "-"+ x+")/("+x2+ "-" +x1+"))*"+q12.value()+ "+(("+x +"-"+ x1+")/("+x2+ "-" +x1+"))*"+q22.value()+"="+r2.value());
+        }
         p = new Trio(inputX, inputY, ((y2 - y) / (y2 - y1)) * r1.value() + ((y - y1) / (y2 - y1)) * r2.value());
+        if(debug){
+            System.out.println("(("+y2+"-"+y+")/("+y2+ "-"+ y1+"))*"+r1.value()+"+"+"(("+y+"-" +y1+")/("+y2+ "-"+y1+"))*"+ r2.value()+"="+p.value());
+        }
         return p.value();
     }
 }

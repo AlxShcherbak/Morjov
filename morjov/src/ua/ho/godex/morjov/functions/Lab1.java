@@ -1,11 +1,8 @@
 package ua.ho.godex.morjov.functions;
 
-import android.util.Pair;
 import ua.ho.godex.morjov.myPair;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by godex
@@ -26,12 +23,12 @@ public class Lab1 {
         Double inputValue = null;
         Double variant = null;
         try {
-            inputValue = Double.parseDouble(inputValueStr);
+            inputValue = MyUtils.strToDouble(inputValueStr);
         } catch (Exception e) {
             e.initCause(new Exception("Проверте правильность числа"));
         }
         try {
-            variant = Double.parseDouble(variantStr);
+            variant = MyUtils.strToDouble(variantStr);
         } catch (Exception e) {
             e.initCause(new Exception("Проверте правильность варианта"));
         }
@@ -74,7 +71,7 @@ public class Lab1 {
      * @throws Exception
      */
     static public Double doInterpolation(String inputValueStr, myPair min,myPair max) throws Exception {
-        return doInterpolation(Double.valueOf(inputValueStr),min,max);
+        return doInterpolation(MyUtils.strToDouble(inputValueStr),min,max);
     }
 
     static public Double doInterpolation(Double inputValueStr, myPair min,myPair max) throws Exception {

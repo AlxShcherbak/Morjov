@@ -1,6 +1,7 @@
 import ua.ho.godex.morjov.functions.HomeWork1;
 import ua.ho.godex.morjov.functions.Lab1;
 import ua.ho.godex.morjov.functions.Lab2Func;
+import ua.ho.godex.morjov.functions.MyUtils;
 
 import java.io.File;
 import java.util.Scanner;
@@ -12,6 +13,7 @@ import java.util.Scanner;
  */
 public class run {
 
+    static File tmpFile = new File("HWdata6.txt");
     static Scanner inScanner = new Scanner(System.in);
 
     public static void menu() {
@@ -45,10 +47,10 @@ public class run {
         String tmp;
         System.out.print("x->");
         tmp = inScanner.next();
-        x = Double.valueOf(tmp);
+        x = MyUtils.strToDouble(tmp);
         System.out.print("Variant->");
         tmp = inScanner.next();
-        var = Double.valueOf(tmp);
+        var = MyUtils.strToDouble(tmp);
         try {
             System.out.print("Ansver=" + Lab1.doInterpolation(x, var));
         } catch (Exception e) {
@@ -63,7 +65,7 @@ public class run {
         System.out.print("Y->");
         yStr = inScanner.next();
         try {
-            System.out.print("Ansver=" + HomeWork1.doBilinearInterpolation(xStr, yStr, new File("HWdata.txt")).toString());
+            System.out.print("Ansver=" + HomeWork1.doBilinearInterpolation(xStr, yStr, tmpFile).toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -75,10 +77,10 @@ public class run {
         String tmp;
         System.out.print("Start->");
         tmp = inScanner.next();
-        start = Double.valueOf(tmp);
+        start = MyUtils.strToDouble(tmp);
         System.out.print("End->");
         tmp = inScanner.next();
-        end = Double.valueOf(tmp);
+        end = MyUtils.strToDouble(tmp);
         System.out.print("method 1)gold  2)Fibona4i->");
         tmp = inScanner.next();
         method = Integer.valueOf(tmp);
@@ -87,13 +89,13 @@ public class run {
             case 1:
                 System.out.print("Погрешность->");
                 tmp = inScanner.next();
-                par3 = Double.valueOf(tmp);
+                par3 = MyUtils.strToDouble(tmp);
                 System.out.print("Ansver=" + new Lab2Func().goldenCut(start, end, par3));
                 break;
             case 2:
                 System.out.print("Iteration->");
                 tmp = inScanner.next();
-                par3 = Double.valueOf(tmp);
+                par3 = MyUtils.strToDouble(tmp);
                 System.out.print("Ansver=" + new Lab2Func().fibonacci(start,end,par3));
                 break;
             default:
@@ -105,7 +107,6 @@ public class run {
     }
 
     public static void main(String[] args) {
-        File tmp = new File("HWdata.txt");
         menu();
     }
 }

@@ -7,10 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
-import ua.ho.godex.morjov.functions.HomeWork1;
-import ua.ho.godex.morjov.functions.Lab1;
-import ua.ho.godex.morjov.functions.Lab2Func;
-import ua.ho.godex.morjov.functions.Variants;
+import ua.ho.godex.morjov.functions.*;
 import ua.ho.godex.morjov.functions.classes.Lab2XFxIteration;
 
 import java.io.File;
@@ -136,10 +133,10 @@ public class Morjov extends Activity {
             switch (
                     dropdown.getSelectedItemPosition()) {
                 case 0:
-                    lab2XFxIteration = new Lab2Func().goldenCut(Double.parseDouble(tab3start.getText().toString()), Double.parseDouble(tab3end.getText().toString()), Double.parseDouble(tab3Par3.getText().toString()));
+                    lab2XFxIteration = new Lab2Func().goldenCut(MyUtils.strToDouble(tab3start.getText().toString()), MyUtils.strToDouble(tab3end.getText().toString()), MyUtils.strToDouble(tab3Par3.getText().toString()));
                     break;
                 case 1:
-                    lab2XFxIteration = new Lab2Func().fibonacci(Double.parseDouble(tab3start.getText().toString()), Double.parseDouble(tab3end.getText().toString()), Double.parseDouble(tab3Par3.getText().toString()));
+                    lab2XFxIteration = new Lab2Func().fibonacci(MyUtils.strToDouble(tab3start.getText().toString()), MyUtils.strToDouble(tab3end.getText().toString()), MyUtils.strToDouble(tab3Par3.getText().toString()));
                     break;
                 default:
                     break;

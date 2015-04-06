@@ -78,7 +78,7 @@ public class Morjov extends Activity {
         tab3Log = (TextView) findViewById(R.id.tab3Log);
 
         dropdown = (Spinner) findViewById(R.id.tab3spinner1);
-        String[] items = new String[]{"Золотое сечение", "Фибоначи"};
+        String[] items = new String[]{"GoldenCut", "Fibona4i"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
         dropdown.setAdapter(adapter);
 

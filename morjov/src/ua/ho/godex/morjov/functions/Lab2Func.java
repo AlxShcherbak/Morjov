@@ -12,7 +12,7 @@ public class Lab2Func {
     private List<Double> parameterList = new ArrayList<Double>();
     private List<Double> resultList = new ArrayList<Double>();
     private List<Long> fibonacciList = new ArrayList<Long>();
-    private final Double goldenCut = 1.618d;
+    private final Double goldenCut = 1.61803398875d;
 
     /**
      * Нахождение экстремума по методу Фибоначчи

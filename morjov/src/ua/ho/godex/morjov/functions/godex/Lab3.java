@@ -54,7 +54,8 @@ public class Lab3 {
         }else{
             x_ = ((e2(x2)-e2(x3))*fx1+(e2(x3)-e2(x1))*fx2+(e2(x1)-e2(x2))*fx2) / ((x2 - x3) * fx1 + (x3 - x1) * fx2 + (x1 - x2) * fx3);
             fx_=new Lab1Func().doInterpolationEnterValues(x_);
-            //todo доделать
+            //todo доделать шаг 6 'http://www.moluch.ru/archive/63/10106/'
+
 
         }
         return 0d;

@@ -18,7 +18,7 @@ public class Lab1Func {
      * @return - „‚„u„x„…„|„„„„p„„ „y„~„„„u„‚„„€„|„‘„ˆ„y„y
      */
     public Double doInterpolationEnterValues(double inputValue) {
-        new VariantSet().setEnterArrayListsVariant19(this.startParamOneArrayList, this.resultArrayList);
+        new VariantSet().setEnterArrayListsVariant13(this.startParamOneArrayList, this.resultArrayList);
         Double returnValue = null;
         if (existenceCheck(inputValue)) {
             return getResult(inputValue);

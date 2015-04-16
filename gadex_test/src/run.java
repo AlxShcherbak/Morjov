@@ -87,7 +87,7 @@ public class run {
         try {
         switch (method){
             case 1:
-                System.out.print("Погрешность->");
+                System.out.print("to4nosty->");
                 tmp = inScanner.next();
                 par3 = MyUtils.strToDouble(tmp);
                 System.out.print("Ansver=" + new Lab2Func().goldenCut(start, end, par3));

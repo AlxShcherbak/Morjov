@@ -9,21 +9,21 @@ import java.util.List;
  * Created by Alx Shcherbak on 22.03.2015.
  */
 public class Lab2Func {
+    private final Double goldenCut = 1.61803398875d;
     private List<Double> parameterList = new ArrayList<Double>();
     private List<Double> resultList = new ArrayList<Double>();
     private List<Long> fibonacciList = new ArrayList<Long>();
-    private final Double goldenCut = 1.61803398875d;
 
     /**
      * Нахождение экстремума по методу Фибоначчи
      *
-     * @param start    - начало отрезка для нахождения экстремума
-     * @param end    - конец отрезка для нахождения экстремума
-     * @param iteration    - количество проводимых итераций
+     * @param start     - начало отрезка для нахождения экстремума
+     * @param end       - конец отрезка для нахождения экстремума
+     * @param iteration - количество проводимых итераций
      * @return - результат точка экстремума, значение функции и количиство итераций
      */
     public Lab2XFxIteration fibonacci(Double start, Double end, Double iteration) {
-        new VariantSet().setEnterArrayListsVariant13(this.parameterList, this.resultList);
+        new VariantSet().setEnterArrayListsVariant6(this.parameterList, this.resultList);
         if (!this.fibonacciList.isEmpty() | (this.fibonacciList.size() < iteration)) {
             fibonacciNumbers(iteration.longValue());
         }
@@ -41,11 +41,11 @@ public class Lab2Func {
     }
 
     /**
-     * @param a                  - начало отрезка
-     * @param b                  - конец отрезка
-     * @param x1                 - составное слогаемое границы с учетом чисел Фибоначчи
-     * @param x2                 - составное слогаемое границы с учетом чисел Фибоначчи
-     * @param iterator           - количество итераций для выполнения
+     * @param a        - начало отрезка
+     * @param b        - конец отрезка
+     * @param x1       - составное слогаемое границы с учетом чисел Фибоначчи
+     * @param x2       - составное слогаемое границы с учетом чисел Фибоначчи
+     * @param iterator - количество итераций для выполнения
      * @return
      */
     private Lab2XFxIteration fibonacciRecursive(double a, double b, double x1, double x2, int iterator) {
@@ -70,13 +70,13 @@ public class Lab2Func {
     /**
      * Нахождение экстремума по методу золотого сечения
      *
-     * @param start    - начало отрезка для нахождения экстремума
-     * @param end    - конец отрезка для нахождения экстремума
-     * @param deviation    - погрешность при нахождении экстремума
+     * @param start     - начало отрезка для нахождения экстремума
+     * @param end       - конец отрезка для нахождения экстремума
+     * @param deviation - погрешность при нахождении экстремума
      * @return - результат точка экстремума, значение функции и количиство итераций
      */
     public Lab2XFxIteration goldenCut(Double start, Double end, Double deviation) {
-        new VariantSet().setEnterArrayListsVariant13(this.parameterList, this.resultList);
+        new VariantSet().setEnterArrayListsVariant6(this.parameterList, this.resultList);
         Lab2XFxIteration goldenCutReturn;
         double x1, x2;
 

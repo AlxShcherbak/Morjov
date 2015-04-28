@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">morjovV13</string>
+    <string name="text_tab1">Lab1</string>
+    <string name="text_tab2">HomeWork</string>
+    <string name="text_tab3">Lab2</string>
+    <string name="text_tab_header">headsss</string>
+    <string name="hwFilePath">/storage/sdcard0/HWdata.txt</string>
+</resources>

@@ -168,6 +168,81 @@
                         </AnchorPane>
                     </content>
                 </Tab>
+                <Tab text="LAB THREE">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextField fx:id="inputStart" alignment="CENTER" layoutX="258.0" layoutY="87.0"
+                                           prefWidth="150.0" AnchorPane.leftAnchor="325.0" AnchorPane.topAnchor="75.0"/>
+                                <TextField fx:id="inputEps" alignment="CENTER" layoutX="258.0" layoutY="123.0"
+                                           prefWidth="150.0" AnchorPane.leftAnchor="325.0"
+                                           AnchorPane.topAnchor="105.0"/>
+                                <Button fx:id="doInputValueLab3" layoutX="375.0" layoutY="146.0" mnemonicParsing="false"
+                                        onAction="#doInputValueLab3" prefHeight="25.0" prefWidth="100.0" text="ВВОД"
+                                        AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="150.0"/>
+                                <TextField fx:id="outputLab3X1" editable="false" layoutX="108.0" layoutY="269.0"
+                                           prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="105.0"
+                                           AnchorPane.topAnchor="260.0"/>
+                                <TextField fx:id="outputLab3FX1" editable="false" layoutX="344.0" layoutY="270.0"
+                                           prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="350.0"
+                                           AnchorPane.topAnchor="260.0"/>
+                                <TextField fx:id="outputLab3Iterat" editable="false" layoutX="344.0" layoutY="303.0"
+                                           prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="350.0"
+                                           AnchorPane.topAnchor="290.0"/>
+                                <TextField fx:id="outputLab3ErrorLog" editable="false" layoutX="206.0" layoutY="325.0"
+                                           prefHeight="25.0" prefWidth="295.0" AnchorPane.leftAnchor="205.0"
+                                           AnchorPane.topAnchor="320.0"/>
+                                <Label layoutX="100.0" layoutY="190.0" text="Результат" AnchorPane.leftAnchor="100.0"
+                                       AnchorPane.topAnchor="220.0">
+                                    <font>
+                                        <Font name="Times New Roman" size="35.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="142.0" layoutY="35.0" text="Введите значение"
+                                       AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="30.0">
+                                    <font>
+                                        <Font name="Times New Roman" size="35.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="76.0" layoutY="88.0" text="Начальная точка" AnchorPane.leftAnchor="75.0"
+                                       AnchorPane.topAnchor="75.0">
+                                    <font>
+                                        <Font name="Times New Roman" size="20.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="81.0" layoutY="124.0" text="Точность " AnchorPane.leftAnchor="75.0"
+                                       AnchorPane.topAnchor="105.0">
+                                    <font>
+                                        <Font name="Times New Roman" size="20.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="75.0" layoutY="244.0" text="X" AnchorPane.leftAnchor="75.0"
+                                       AnchorPane.topAnchor="260.0">
+                                    <font>
+                                        <Font name="Times New Roman" size="20.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="75.0" layoutY="304.0" text="Проведено итераций"
+                                       AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="290.0">
+                                    <font>
+                                        <Font name="Times New Roman" size="20.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="293.0" layoutY="271.0" text="F(x)" AnchorPane.topAnchor="260.0">
+                                    <font>
+                                        <Font name="Times New Roman" size="20.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="75.0" layoutY="314.0" text="Лог ошибок" AnchorPane.leftAnchor="75.0"
+                                       AnchorPane.topAnchor="320.0">
+                                    <font>
+                                        <Font name="Times New Roman" size="20.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
             </tabs>
         </TabPane>
     </children>

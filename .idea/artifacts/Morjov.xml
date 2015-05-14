@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Morjov">
+    <output-path>$PROJECT_DIR$/out/artifacts/Morjov</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Run" />
+        <option name="description" value="" />
+        <option name="htmlParamFile" value="" />
+        <option name="paramFile" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Morjov.jar">
+        <element id="module-output" name="Morjov" />
+      </element>
+    </root>
+  </artifact>
+</component>

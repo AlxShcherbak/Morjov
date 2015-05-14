@@ -1,6 +1,6 @@
 package functions;
 
-import functions.classes.Lab2XFxIteration;
+import functions.classes.LabXFxIteration;
 import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class Lab2Func {
     private List<Double> parameterList = new ArrayList<Double>();
     private List<Double> resultList = new ArrayList<Double>();
     private List<Long> fibonacciList = new ArrayList<Long>();
-    private final Double goldenCut = 1.618d;
+    private static final Double GOLDEN_CUT = 1.618d;
 
     /**
      * Нахождение экстремума по методу Фибоначчи
@@ -24,7 +24,7 @@ public class Lab2Func {
      * @param errorTextField - текстовое поле для вывода ошибок
      * @return - результат точка экстремума, значение функции и количиство итераций
      */
-    public Lab2XFxIteration fibonacci(Double inputValue1, Double inputValue2, Double inputValue3, TextField errorTextField) {
+    public LabXFxIteration fibonacci(Double inputValue1, Double inputValue2, Double inputValue3, TextField errorTextField) {
         new VariantSet().setEnterArrayListsVariant19(this.parameterList, this.resultList);
         if (!this.fibonacciList.isEmpty() | (this.fibonacciList.size() < inputValue3)) {
             fibonacciNumbers(inputValue3.longValue());
@@ -51,9 +51,9 @@ public class Lab2Func {
      * @param outputLab2ErrorLog - текстовое поле для вывода ошибок
      * @return
      */
-    private Lab2XFxIteration fibonacciRecursive(double a, double b, double x1, double x2, int iterator, TextField outputLab2ErrorLog) {
+    private LabXFxIteration fibonacciRecursive(double a, double b, double x1, double x2, int iterator, TextField outputLab2ErrorLog) {
         iterator--;
-        Lab2XFxIteration fibonacciRecursiveReturn;
+        LabXFxIteration fibonacciRecursiveReturn;
         if (new Lab1Func().doInterpolationEnterValues(x1, outputLab2ErrorLog) > (new Lab1Func().doInterpolationEnterValues(x2, outputLab2ErrorLog))) {
             a = x1;
             x1 = x2;
@@ -65,7 +65,7 @@ public class Lab2Func {
         }
 
         if (iterator == 1) {
-            fibonacciRecursiveReturn = new Lab2XFxIteration(x1, new Lab1Func().doInterpolationEnterValues(x1, outputLab2ErrorLog));
+            fibonacciRecursiveReturn = new LabXFxIteration(x1, new Lab1Func().doInterpolationEnterValues(x1, outputLab2ErrorLog));
         } else fibonacciRecursiveReturn = fibonacciRecursive(a, b, x1, x2, iterator, outputLab2ErrorLog);
         return fibonacciRecursiveReturn;
     }
@@ -79,26 +79,26 @@ public class Lab2Func {
      * @param errorTextField - текстовое поле для вывода ошибок
      * @return - результат точка экстремума, значение функции и количиство итераций
      */
-    public Lab2XFxIteration goldenCut(Double inputValue1, Double inputValue2, Double inputValue3, TextField errorTextField) {
+    public LabXFxIteration goldenCut(Double inputValue1, Double inputValue2, Double inputValue3, TextField errorTextField) {
         new VariantSet().setEnterArrayListsVariant19(this.parameterList, this.resultList);
-        Lab2XFxIteration goldenCutReturn;
+        LabXFxIteration goldenCutReturn;
         double x1, x2;
 
-        x1 = inputValue2 - (inputValue2 - inputValue1) / goldenCut;
-        x2 = inputValue1 + (inputValue2 - inputValue1) / goldenCut;
+        x1 = inputValue2 - (inputValue2 - inputValue1) / GOLDEN_CUT;
+        x2 = inputValue1 + (inputValue2 - inputValue1) / GOLDEN_CUT;
 
 
         if ((new Lab1Func().doInterpolationEnterValues(x1, errorTextField)) >=
                 (new Lab1Func().doInterpolationEnterValues(x2, errorTextField))) {
             if (inputValue3 > Math.abs(inputValue2 - x1)) {
-                goldenCutReturn = new Lab2XFxIteration((x1 + inputValue2) / 2,
+                goldenCutReturn = new LabXFxIteration((x1 + inputValue2) / 2,
                         new Lab1Func().doInterpolationEnterValues((x1 + inputValue2) / 2, errorTextField));
             } else {
                 goldenCutReturn = goldenCut(x1, inputValue2, inputValue3, errorTextField);
             }
         } else {
             if (inputValue3 > Math.abs(x2 - inputValue1)) {
-                goldenCutReturn = new Lab2XFxIteration((inputValue1 + x2) / 2,
+                goldenCutReturn = new LabXFxIteration((inputValue1 + x2) / 2,
                         new Lab1Func().doInterpolationEnterValues((inputValue1 + x2) / 2, errorTextField));
             } else {
                 goldenCutReturn = goldenCut(inputValue1, x2, inputValue3, errorTextField);

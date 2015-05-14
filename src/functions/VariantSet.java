@@ -177,4 +177,108 @@ public class VariantSet {
 
         return parametersArrayList;
     }
+
+    /**
+     * Инициализация входных массивов значений
+     * Вариант №10 Кухтин
+     */
+    protected void setEnterArrayListsVariant10(List<Double> startParamOneArrayList, List<Double> resultArrayList) {
+        if ((startParamOneArrayList.isEmpty()) & (resultArrayList.isEmpty())) {
+
+            startParamOneArrayList.add(0d);
+            startParamOneArrayList.add(0.2d);
+            startParamOneArrayList.add(0.4d);
+            startParamOneArrayList.add(0.6d);
+            startParamOneArrayList.add(0.8d);
+            startParamOneArrayList.add(1d);
+            startParamOneArrayList.add(1.1d);
+
+            resultArrayList.add(-0.0005);
+            resultArrayList.add(-0.0008);
+            resultArrayList.add(0.00095);
+            resultArrayList.add(-0.001);
+            resultArrayList.add(-0.0012);
+            resultArrayList.add(-0.0014);
+            resultArrayList.add(-0.0016);
+        }
+    }
+
+    protected List<HomeWorkFirstClass> setEnterArrayListsVariant10(List<HomeWorkFirstClass> parametersArrayList) {
+        List<Double> paramFirsArrayList = new ArrayList<Double>();
+        List<Double> paramSecondArrayList = new ArrayList<Double>();
+        ArrayList<Double> resultArrayList = new ArrayList<Double>();
+
+
+        paramFirsArrayList.add(0d);
+        paramFirsArrayList.add(0.2d);
+        paramFirsArrayList.add(0.4d);
+        paramFirsArrayList.add(0.6d);
+        paramFirsArrayList.add(0.8d);
+        paramFirsArrayList.add(1d);
+        paramFirsArrayList.add(1.1d);
+
+        paramSecondArrayList.add(0d);
+        paramSecondArrayList.add(6d);
+        paramSecondArrayList.add(9d);
+        paramSecondArrayList.add(13d);
+
+        resultArrayList.add(-0.0005);
+        resultArrayList.add(-0.001);
+        resultArrayList.add(-0.0012);
+        resultArrayList.add(-0.0013);
+
+        parametersArrayList.add(new HomeWorkFirstClass(paramFirsArrayList.get(0), paramSecondArrayList, (List<Double>) resultArrayList.clone()));
+        resultArrayList.clear();
+
+        resultArrayList.add(-0.0008);
+        resultArrayList.add(-0.0012);
+        resultArrayList.add(-0.0018);
+        resultArrayList.add(-0.002);
+
+        parametersArrayList.add(new HomeWorkFirstClass(paramFirsArrayList.get(1), paramSecondArrayList, (List<Double>) resultArrayList.clone()));
+        resultArrayList.clear();
+
+        resultArrayList.add(0.00095);
+        resultArrayList.add(-0.0016);
+        resultArrayList.add(-0.0022);
+        resultArrayList.add(-0.0026);
+
+        parametersArrayList.add(new HomeWorkFirstClass(paramFirsArrayList.get(2), paramSecondArrayList, (List<Double>) resultArrayList.clone()));
+        resultArrayList.clear();
+
+        resultArrayList.add(-0.001);
+        resultArrayList.add(-0.0019);
+        resultArrayList.add(-0.0026);
+        resultArrayList.add(-0.00295);
+
+        parametersArrayList.add(new HomeWorkFirstClass(paramFirsArrayList.get(3), paramSecondArrayList, (List<Double>) resultArrayList.clone()));
+        resultArrayList.clear();
+
+        resultArrayList.add(-0.0012);
+        resultArrayList.add(-0.002);
+        resultArrayList.add(-0.0028);
+        resultArrayList.add(-0.0032);
+
+        parametersArrayList.add(new HomeWorkFirstClass(paramFirsArrayList.get(4), paramSecondArrayList, (List<Double>) resultArrayList.clone()));
+        resultArrayList.clear();
+
+        resultArrayList.add(-0.0014);
+        resultArrayList.add(-0.0021);
+        resultArrayList.add(-0.0029);
+        resultArrayList.add(-0.0033);
+
+        parametersArrayList.add(new HomeWorkFirstClass(paramFirsArrayList.get(5), paramSecondArrayList, (List<Double>) resultArrayList.clone()));
+        resultArrayList.clear();
+
+        resultArrayList.add(-0.0016);
+        resultArrayList.add(-0.0024);
+        resultArrayList.add(-0.0032);
+        resultArrayList.add(-0.0039);
+
+        parametersArrayList.add(new HomeWorkFirstClass(paramFirsArrayList.get(6), paramSecondArrayList, (List<Double>) resultArrayList.clone()));
+        resultArrayList.clear();
+
+
+        return parametersArrayList;
+    }
 }

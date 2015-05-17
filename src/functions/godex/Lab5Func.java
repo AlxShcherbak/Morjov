@@ -26,13 +26,7 @@ public class Lab5Func {
             System.out.print("|" + el);
         }
 
-        System.out.print("\n");
-        int variant = 13;
-        List<myPair> pairList = Variants.getLab1Data(variant);
-        bubbleSortInvert(pairList);
-        for (int i=0; i<pairList.size()-1;i++) {
-            System.out.print("|" + pairList.get(i));
-        }
+
     }
 
     public static void bubbleSortInvert(int[] arr) {

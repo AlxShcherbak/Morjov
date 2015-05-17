@@ -17,7 +17,7 @@ public class Variants {
      * @param variant - номер варианта
      * @return - данные(масив)
      */
-    static List<myPair> getLab1Data(int variant) {
+    public static List<myPair> getLab1Data(int variant) {
         List<myPair> returnHashMap = new ArrayList<>();
         System.out.print(variant);
         switch (variant) {

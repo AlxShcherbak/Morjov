@@ -1,11 +1,9 @@
 
 import functions.Lab3Funk;
-import functions.godex.HomeWork1;
-import functions.godex.Lab1;
-import functions.godex.Lab2Func;
-import functions.godex.MyUtils;
+import functions.godex.*;
 
 import java.io.File;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -25,6 +23,8 @@ public class run_console {
                     "\n2)HW1" +
                     "\n3)Lab2" +
                     "\n4)Lab3" +
+                    "\n5)Lab4" +
+                    "\n6)Lab5" +
                     "\n0)exit" +
                     "\n");
             switch (inScanner.nextInt()) {
@@ -42,6 +42,14 @@ public class run_console {
                     break;
                 case 4:
                     lab3start();
+                    menu();
+                    break;
+                case 5:
+                    lab4start();
+                    menu();
+                    break;
+                case 6:
+                    lab5start();
                     menu();
                     break;
                 case 0:
@@ -79,6 +87,17 @@ public class run_console {
                 e.printStackTrace();
             }
         }
+
+    public static void lab4start() {
+
+    }
+    public static void lab5start() {
+        System.out.print("\n");
+        int variant = 13;
+        List<myPair> pairList = Variants.getLab1Data(variant);
+        Lab5Func.bubbleSortInvert(pairList);
+        System.out.println(pairList.get(0));
+    }
 
         public static void lab3start() {
             Double start, end, to4;

@@ -1,19 +1,25 @@
-package functions.classes;
+package functions;
 
 import javafx.scene.control.TextField;
 
 /**
  * Created by Alx Shcherbak on 22.03.2015.
  */
-public class Lab2XFxIteration {
+public class LabXFxIteration {
     private double x;
     private double fX;
     private long iteration;
 
-    public Lab2XFxIteration(double x, double fX) {
+    public LabXFxIteration(double x, double fX) {
         this.x = x;
         this.fX = fX;
         this.iteration = 0;
+    }
+
+    public LabXFxIteration(double x, double fX, long iteration) {
+        this.x = x;
+        this.fX = fX;
+        this.iteration = iteration;
     }
 
     public void incrementIterator() {
@@ -44,7 +50,7 @@ public class Lab2XFxIteration {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Lab2XFxIteration that = (Lab2XFxIteration) o;
+        LabXFxIteration that = (LabXFxIteration) o;
 
         if (Double.compare(that.fX, fX) != 0) return false;
         if (iteration != that.iteration) return false;

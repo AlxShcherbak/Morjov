@@ -218,7 +218,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Morjov.iml" filepath="$PROJECT_DIR$/Morjov.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gadex_test/gadex_test.iml" filepath="$PROJECT_DIR$/gadex_test/gadex_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alex/alex.iml" filepath="$PROJECT_DIR$/alex/alex.iml" />
       <module fileurl="file://$PROJECT_DIR$/morjov/morjov.iml" filepath="$PROJECT_DIR$/morjov/morjov.iml" />
     </modules>
   </component>

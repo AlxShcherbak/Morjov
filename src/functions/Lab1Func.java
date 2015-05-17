@@ -36,19 +36,6 @@ public class Lab1Func {
         return returnValue;
     }
 
-    public Double doInterpolationEnterValues(double inputValue) {
-        new VariantSet().setEnterArrayListsVariant19(this.startParamOneArrayList, this.resultArrayList);
-        Double returnValue = null;
-        if (existenceCheck(inputValue)) {
-            return getResult(inputValue);
-        }
-        Double[] borders = borders(inputValue);
-        if (borders[0] != (null)) {
-            returnValue = doInterpolation(inputValue, borders);
-        }
-        return returnValue;
-    }
-
     /**
      * дебаг метод
      *
@@ -96,7 +83,7 @@ public class Lab1Func {
      * @param inputValue - входная величина
      * @return -   массив границ для проведения интерполяции
      */
-    private Double[] borders(double inputValue) {
+    public Double[] borders(double inputValue) {
         Double[] returnBorders = new Double[2];
         for (int i = 0, j = 1; i < this.startParamOneArrayList.size(); i++, j++) {
             if (((i == 0) & (this.startParamOneArrayList.get(i) > inputValue)) |
@@ -135,7 +122,7 @@ public class Lab1Func {
      * @param inputValue - входная величина
      * @return - значение результата для водной величины
      */
-    private Double getResult(Double inputValue) {
+    protected Double getResult(Double inputValue) {
         Double resultValue = null;
         for (Double item : this.startParamOneArrayList) {
             if (item.equals(inputValue)) {

@@ -1,6 +1,5 @@
 package functions;
 
-import functions.classes.HomeWorkFirstClass;
 import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class HomeWorkFirstRealization {
      * @param inputValue2     - входная величина 2
      * @param outputTextField - входное выходное текстовое поле
      * @return - результат проведения интерполяции
-     * @throws java.lang.NullPointerException - Thrown when an application attempts to use {@code null} in a
+     * @throws NullPointerException - Thrown when an application attempts to use {@code null} in a
      *                                        case where an object is required.
      */
     public Double doInterpolationEnterValues(double inputValue1, double inputValue2, TextField outputTextField) throws NullPointerException {
@@ -67,7 +66,7 @@ public class HomeWorkFirstRealization {
     private HomeWorkFirstClass[] border(double inputValue) {
         HomeWorkFirstClass[] returnBorders = new HomeWorkFirstClass[2];
 
-        if ((inputValue < this.parameters.get(0).getParameterFirst()) | (inputValue > this.parameters.get(9).getParameterFirst())) {
+        if ((inputValue < this.parameters.get(0).getParameterFirst()) | (inputValue > this.parameters.get(this.parameters.size() - 1).getParameterFirst())) {
             System.out.println("Введеное значение вне условного массива");
             setMassageToOutputTextField("Введеное значение вне условного массива");
         } else {
@@ -92,7 +91,7 @@ public class HomeWorkFirstRealization {
     private Double[] border(double inputValue, HomeWorkFirstClass afterFirstIteration) {
         Double[] returnBorders = null;
 
-        if ((inputValue < afterFirstIteration.getParameterSecondArrayList().get(0)) | (inputValue > afterFirstIteration.getParameterSecondArrayList().get(6))) {
+        if ((inputValue < afterFirstIteration.getParameterSecondArrayList().get(0)) | (inputValue > afterFirstIteration.getParameterSecondArrayList().get(afterFirstIteration.getParameterSecondArrayList().size() - 1))) {
             System.out.println("Введеное значение вне условного массива");
             setMassageToOutputTextField("Введеное значение вне условного массива");
         } else {

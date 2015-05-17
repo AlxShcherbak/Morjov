@@ -1,6 +1,5 @@
 package functions;
 
-import functions.classes.HomeWorkFirstClass;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -23,7 +22,7 @@ public class HomeWorkSecondRealization {
      * @param inputValue2     - входная величина 2
      * @param outputTextField - входное выходное текстовое поле
      * @return - результат проведения интерполяции
-     * @throws java.lang.NullPointerException - Thrown when an application attempts to use {@code null} in a
+     * @throws NullPointerException - Thrown when an application attempts to use {@code null} in a
      *                                        case where an object is required.
      */
     public Double doInterpolationEnterValues(double inputValue1, double inputValue2, TextField outputTextField) throws NullPointerException {

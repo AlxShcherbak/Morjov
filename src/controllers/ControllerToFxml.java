@@ -1,9 +1,6 @@
 package controllers;
 
-import functions.HomeWorkFirstRealization;
-import functions.Lab1Func;
-import functions.Lab2Func;
-import functions.Lab3Funk;
+import functions.*;
 import functions.classes.LabXFxIteration;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -47,6 +44,12 @@ public class ControllerToFxml implements Initializable {
     public TextField outputLab3FX1;
     public TextField outputLab3Iterat;
     public TextField outputLab3ErrorLog;
+
+    public TextField lab4Delta;
+    public Button doInputValueLab4;
+    public TextField outputLab4X;
+    public TextField outputLab4FX;
+    public TextField outputLab4ErrorLog;
 
     public void initialize(URL url, ResourceBundle rb) {
         choiceBoxLab2.setItems(FXCollections.observableArrayList(
@@ -149,6 +152,28 @@ public class ControllerToFxml implements Initializable {
                 LabXFxIteration resultGradient = new Lab3Funk().doGradient(Double.parseDouble(inputValueString1), Double.parseDouble(inputValueString2), outputLab3ErrorLog);
                 if (resultGradient != null) {
                     resultGradient.printInForm(outputLab3X1, outputLab3FX1, outputLab3Iterat);
+                }
+            } catch (NumberFormatException e) {                 // Введеное значение не цифра
+                System.out.println("Введеное начальное значение не цифра");
+                outputTextFieldHW.setText("Введеное начальное значение не цифра");
+            }
+        } else {
+            outputTextFieldHW.setText("Не введено начальное значение");
+            System.out.println("Не введено начальное значение");
+        }
+    }
+
+    public void doInputValueLab4(ActionEvent actionEvent) {
+        outputLab3X1.clear();
+        outputLab4ErrorLog.clear();
+        outputLab4FX.clear();
+        outputLab4X.clear();
+        if (!lab4Delta.getText().isEmpty()) {
+            String inputValuelab4DeltaString = lab4Delta.getText();
+            try {
+                LabXFxIteration resultLagrange = new Lab4Func().lagrangePolinomSearchMin(Double.parseDouble(inputValuelab4DeltaString));
+                if (resultLagrange != null) {
+                    resultLagrange.printInForm(outputLab4X, outputLab4FX);
                 }
             } catch (NumberFormatException e) {                 // Введеное значение не цифра
                 System.out.println("Введеное начальное значение не цифра");

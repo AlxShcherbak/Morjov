@@ -1,7 +1,5 @@
 package functions;
 
-import functions.classes.HomeWorkFirstClass;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +7,33 @@ import java.util.List;
  * Created by Alx Shcherbak on 22.03.2015.
  */
 public class VariantSet {
+
+    public void setEnterArrayListsVariant13(List<Double> startParamOneArrayList, List<Double> resultArrayList) {
+        if ((startParamOneArrayList.isEmpty()) & (resultArrayList.isEmpty())) {
+
+            startParamOneArrayList.add(0d);
+            startParamOneArrayList.add(0.125d);
+            startParamOneArrayList.add(0.25d);
+            startParamOneArrayList.add(0.375d);
+            startParamOneArrayList.add(0.5d);
+            startParamOneArrayList.add(0.625d);
+            startParamOneArrayList.add(0.75d);
+            startParamOneArrayList.add(0.875d);
+            startParamOneArrayList.add(1.0d);
+            startParamOneArrayList.add(1.3d);
+
+            resultArrayList.add(12000d);
+            resultArrayList.add(10800d);
+            resultArrayList.add(9800d);
+            resultArrayList.add(8850d);
+            resultArrayList.add(8000d);
+            resultArrayList.add(7100d);
+            resultArrayList.add(6250d);
+            resultArrayList.add(5300d);
+            resultArrayList.add(4400d);
+            resultArrayList.add(4000d);
+        }
+    }
 
     /**
      * Инициализация входных массивов значений

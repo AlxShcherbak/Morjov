@@ -1,7 +1,5 @@
-package ua.ho.godex.morjov.functions;
+package functions.godex;
 
-import ua.ho.godex.morjov.Trio;
-import ua.ho.godex.morjov.myPair;
 
 import java.io.File;
 import java.io.IOException;

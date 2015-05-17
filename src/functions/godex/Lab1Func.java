@@ -1,4 +1,6 @@
-package ua.ho.godex.morjov.functions;
+package functions.godex;
+
+import functions.VariantSet;
 
 import java.util.ArrayList;
 import java.util.List;

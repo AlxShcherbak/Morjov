@@ -1,4 +1,8 @@
-import ua.ho.godex.morjov.functions.MyUtils;
+
+import functions.godex.HomeWork1;
+import functions.godex.Lab1;
+import functions.godex.Lab2Func;
+import functions.godex.MyUtils;
 
 import java.io.File;
 import java.util.Scanner;
@@ -19,6 +23,8 @@ public class run_console {
             System.out.print("\n1)lab1" +
                     "\n2)HW1" +
                     "\n3)Lab2" +
+
+                    "\n4)Lab2" +
                     "\n0)exit" +
                     "\n");
             switch (inScanner.nextInt()) {
@@ -32,6 +38,10 @@ public class run_console {
                     break;
                 case 3:
                     lab2start();
+                    menu();
+                    break;
+                case 4:
+                    lab3start();
                     menu();
                     break;
                 case 0:
@@ -104,6 +114,41 @@ public class run_console {
                 e.printStackTrace();
             }
         }
+
+    public static void lab3start() {
+        Double start, end, par3;
+        Integer method;
+        String tmp;
+        System.out.print("Start->");
+        tmp = inScanner.next();
+        start = MyUtils.strToDouble(tmp);
+        System.out.print("End->");
+        tmp = inScanner.next();
+        end = MyUtils.strToDouble(tmp);
+        System.out.print("method 1)gold  2)Fibona4i->");
+        tmp = inScanner.next();
+        method = Integer.valueOf(tmp);
+        try {
+            switch (method){
+                case 1:
+                    System.out.print("to4nosty->");
+                    tmp = inScanner.next();
+                    par3 = MyUtils.strToDouble(tmp);
+                    System.out.print("Ansver=" + new Lab2Func().goldenCut(start, end, par3));
+                    break;
+                case 2:
+                    System.out.print("Iteration->");
+                    tmp = inScanner.next();
+                    par3 = MyUtils.strToDouble(tmp);
+                    System.out.print("Ansver=" + new Lab2Func().fibonacci(start,end,par3));
+                    break;
+                default:
+                    menu();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
         public static void main(String[] args) {
             menu();

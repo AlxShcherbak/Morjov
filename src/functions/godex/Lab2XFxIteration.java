@@ -1,4 +1,4 @@
-package ua.ho.godex.morjov.functions.classes;
+package functions.godex;
 
 /**
  * Created by Alx Shcherbak on 22.03.2015.

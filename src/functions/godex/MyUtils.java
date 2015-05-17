@@ -1,4 +1,4 @@
-package ua.ho.godex.morjov.functions;
+package functions.godex;
 
 /**
  * Created by godex_000

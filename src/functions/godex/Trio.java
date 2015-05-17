@@ -1,4 +1,4 @@
-package ua.ho.godex.morjov;
+package functions.godex;
 
 /**
  * Created by godex on 24.03.2015.

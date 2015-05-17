@@ -8,33 +8,25 @@ import java.util.List;
  */
 public class VariantSet {
 
-    public void setEnterArrayListsVariant13(List<Double> startParamOneArrayList, List<Double> resultArrayList) {
+    public void setEnterArrayListsVariant6(List<Double> startParamOneArrayList, List<Double> resultArrayList) {
         if ((startParamOneArrayList.isEmpty()) & (resultArrayList.isEmpty())) {
 
             startParamOneArrayList.add(0d);
-            startParamOneArrayList.add(0.125d);
-            startParamOneArrayList.add(0.25d);
-            startParamOneArrayList.add(0.375d);
-            startParamOneArrayList.add(0.5d);
-            startParamOneArrayList.add(0.625d);
-            startParamOneArrayList.add(0.75d);
-            startParamOneArrayList.add(0.875d);
-            startParamOneArrayList.add(1.0d);
-            startParamOneArrayList.add(1.3d);
+            startParamOneArrayList.add(5d);
+            startParamOneArrayList.add(10d);
+            startParamOneArrayList.add(15d);
+            startParamOneArrayList.add(20d);
+            startParamOneArrayList.add(25d);
 
-            resultArrayList.add(12000d);
-            resultArrayList.add(10800d);
-            resultArrayList.add(9800d);
-            resultArrayList.add(8850d);
-            resultArrayList.add(4000d);
-            resultArrayList.add(3100d);
-            resultArrayList.add(4250d);
-            resultArrayList.add(5300d);
-            resultArrayList.add(6400d);
-            resultArrayList.add(7000d);
+            resultArrayList.add(0.35);
+            resultArrayList.add(0.05);
+            resultArrayList.add(-0.1);
+            resultArrayList.add(-0.3);
+            resultArrayList.add(-0.25);
+            resultArrayList.add(-0.2);
         }
     }
-    public void setEnterArrayListsVariant6(List<Double> startParamOneArrayList, List<Double> resultArrayList) {
+    public void setEnterArrayListsVariant13(List<Double> startParamOneArrayList, List<Double> resultArrayList) {
         if ((startParamOneArrayList.isEmpty()) & (resultArrayList.isEmpty())) {
 
             startParamOneArrayList.add(0d);

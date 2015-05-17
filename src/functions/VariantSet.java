@@ -26,12 +26,12 @@ public class VariantSet {
             resultArrayList.add(10800d);
             resultArrayList.add(9800d);
             resultArrayList.add(8850d);
-            resultArrayList.add(8000d);
-            resultArrayList.add(7100d);
-            resultArrayList.add(6250d);
-            resultArrayList.add(5300d);
-            resultArrayList.add(4400d);
             resultArrayList.add(4000d);
+            resultArrayList.add(3100d);
+            resultArrayList.add(4250d);
+            resultArrayList.add(5300d);
+            resultArrayList.add(6400d);
+            resultArrayList.add(7000d);
         }
     }
 

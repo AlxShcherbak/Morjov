@@ -1,7 +1,5 @@
 package functions;
 
-import javafx.scene.control.TextField;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,17 +9,24 @@ import java.util.List;
 public class Lab3Funk {
     private List<Double> startParamOneArrayList = new ArrayList<Double>();
     private List<Double> resultArrayList = new ArrayList<Double>();
-    private TextField outputTextField;
+
+    public List<Double> getStartParamOneArrayList() {
+        return startParamOneArrayList;
+    }
+
+    public List<Double> getResultArrayList() {
+        return resultArrayList;
+    }
 
     /**
-     * ������� ������������� ���������� ������������
+     * Поиск градиента
      *
-     * @param outputTextField - ������� �������� ��������� ����
-     * @return - ��������� ������������
+     * @param inputValueStart начальная точка
+     * @param inputValueEps   точность
+     * @return
      */
-    public LabXFxIteration doGradient(double inputValueStart, double inputValueEps, TextField outputTextField) {
-        this.outputTextField = outputTextField;
-        new VariantSet().setEnterArrayListsVariant19(this.startParamOneArrayList, this.resultArrayList);
+    public LabXFxIteration doGradient(double inputValueStart, double inputValueEps) {
+        new VariantSet().setEnterArrayListsVariant13(this.startParamOneArrayList, this.resultArrayList);
         LabXFxIteration returnValue = null;
         Double[] borderStart = new Lab1Func().borders(inputValueStart);
         Double xStart = startValue(inputValueStart);
@@ -33,11 +38,12 @@ public class Lab3Funk {
         double grad2 = 0;
         double point = 0;
         int a = 0;
-        grad = (resultArrayList.get(j + 1) - resultArrayList.get(j)) /
-                Math.abs(startParamOneArrayList.get(j + 1) - startParamOneArrayList.get(j));
+        grad = (resultArrayList.get(j + 1) - resultArrayList.get(j)) / Math.abs(startParamOneArrayList.get(j + 1) - startParamOneArrayList.get(j));
         if (grad > 0) {
             a = j / 2 + 1;
-        } else a = (startParamOneArrayList.size() - j) / 2;
+        } else {
+            a = (startParamOneArrayList.size() - j) / 2;
+        }
         int count = 1;
 
         while (true) {
@@ -78,7 +84,6 @@ public class Lab3Funk {
             }
             count = count + 1;
         }
-
         return new LabXFxIteration(point, max, count);
     }
 
@@ -110,6 +115,6 @@ public class Lab3Funk {
      * @param massage - ��������� ��� ������
      */
     private void setMassageToOutputTextField(String massage) {
-        this.outputTextField.setText("�������� �������� ��� ��������� �������");
+        System.err.println(massage);
     }
 }

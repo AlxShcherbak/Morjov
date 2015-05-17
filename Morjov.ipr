@@ -58,16 +58,21 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/functions/Lab2Func.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/functions/Lab3Funk.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/functions/Lab4Func.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/functions/godex/HomeWork1.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/functions/godex/Lab1.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/functions/godex/Lab2Func.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/functions/godex/Lab4Func.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/functions/godex/Lab5Func.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/functions/godex/MyUtils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/functions/godex/Trio.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/functions/godex/Variants.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/functions/godex/myPair.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/run_console.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
   <component name="EntryPointsManager">
     <entry_points version="2.0" />

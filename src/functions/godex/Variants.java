@@ -76,7 +76,6 @@ public class Variants {
         returnHashMap.add(new Trio(0, 8, 12000));
         returnHashMap.add(new Trio(0, 10, 12000));
         returnHashMap.add(new Trio(0, 12, 12000));
-
         return null;
     }
 

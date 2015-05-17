@@ -36,6 +36,11 @@ public class LabXFxIteration {
         outputIteration.setText(String.valueOf(this.iteration));
     }
 
+    public void printInForm(TextField outputX, TextField outputFX) {
+        outputX.setText(String.valueOf(this.x));
+        outputFX.setText(String.valueOf(this.fX));
+    }
+
     @Override
     public String toString() {
         return "Lab2XFxIteration{" +

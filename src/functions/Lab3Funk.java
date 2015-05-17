@@ -44,6 +44,7 @@ public class Lab3Funk {
         } else {
             a = (startParamOneArrayList.size() - j) / 2;
         }
+
         int count = 1;
 
         while (true) {

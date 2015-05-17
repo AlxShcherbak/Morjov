@@ -1,5 +1,7 @@
 package functions;
 
+import functions.classes.LabXFxIteration;
+
 import java.util.HashMap;
 
 /**
@@ -29,9 +31,6 @@ public class Lab4Func {
         double[] fX = {9850, 8850, 8070, 8370, 9550, 6330, 5800, 5270, 4750, 4000};
 */
 
-        /*
-        Тут данные за вариантом
-         */
         double[] x = {0d, 0.25d, 0.5d, 0.875d, 1, 1.5d};
         double[] fX = {9850, 8070, 9550, 5270, 4750, 4000};
 

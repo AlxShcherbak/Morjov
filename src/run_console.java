@@ -95,8 +95,8 @@ public class run_console {
         System.out.print("\n");
         int variant = 13;
         List<myPair> pairList = Variants.getLab1Data(variant);
-        Lab5Func.bubbleSortInvert(pairList);
-        System.out.println(pairList.get(0));
+        double x0=1,x1=0.5;
+        //Lab5Func.in(pairList,x0,x1,variant);
     }
 
         public static void lab3start() {
